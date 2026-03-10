@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESQID - Emergency Profile System</title>
+    <meta
+      name="description"
+      content="QR-based emergency profile system for schools. Every child carries their lifeline."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <!-- FAVICON -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_io/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
+    <!-- add external css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="c-dot" id="cDot"></div>
+    <div class="c-ring" id="cRing"></div>
+    <div id="sp"></div>
+    <button id="btt" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- NAVBAR -->
+    <nav id="nav">
+      <div class="nav-in">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-icon">
+            <img src="assets/favicon_io/favicon-32x32.png" alt="" />
+          </div>
+          <span class="nav-logo-txt">RESQ<span>ID</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta d-flex">
+          <a href="#pricing" class="btn-o">View Plans</a>
+          <a href="#contact" class="btn-r ms-2"
+            ><span>Get Started</span> <i class="bi bi-arrow-right btn-icon"></i
+          ></a>
+        </div>
+        <button class="hamburger" id="hambBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobNav">
+      <button class="mob-close" id="mobClose"><i class="bi bi-x"></i></button>
+      <a href="#home" class="mob-lnk">Home</a>
+      <a href="#how" class="mob-lnk">How It Works</a>
+      <a href="#features" class="mob-lnk">Features</a>
+      <a href="#pricing" class="mob-lnk">Pricing</a>
+      <a href="#team" class="mob-lnk">Team</a>
+      <a href="#contact" class="mob-lnk">Contact</a>
+      <a href="#contact" class="btn-r mt-3"
+        ><span>Get Started</span> <i class="bi bi-arrow-right btn-icon"></i
+      ></a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot">NEW</span>
+              QR Emergency Cards for Schools
+            </div>
+            <h1 class="hero-h1">
+              Every child carries
+              <span class="accent">their lifeline.</span>
+            </h1>
+            <p class="hero-sub">
+              SchoolQR Guardian turns a simple plastic card into a complete
+              emergency profile. First responders scan — parents stay informed.
+              Schools stay protected.
+            </p>
+            <div class="d-flex gap-3 flex-wrap hero-cta">
+              <a href="#how" class="btn-r pulse"
+                ><span>See How It Works</span>
+                <i class="bi bi-arrow-right btn-icon"></i
+              ></a>
+              <a href="#pricing" class="btn-o"
+                ><span>View Pricing</span> <i class="bi bi-chevron-right"></i
+              ></a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-n">2,400+</div>
+                <div class="stat-l">Active Parents</div>
+              </div>
+              <div class="stat-div"></div>
+              <div>
+                <div class="stat-n">120+</div>
+                <div class="stat-l">Partner Schools</div>
+              </div>
+              <div class="stat-div"></div>
+              <div>
+                <div class="stat-n">99.9%</div>
+                <div class="stat-l">Uptime SLA</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-phone">
+            <div class="phone">
+              <div class="notch"><div class="notch-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-card">
+                  <div class="p-lbl">Guardian Emergency Card</div>
+                  <div class="p-num">RESQID-A4F9B2</div>
+                  <div class="p-status">
+                    <span class="dot-live"></span> Active
+                  </div>
+                </div>
+                <div class="p-row">
+                  <div class="p-ico">🩸</div>
+                  <div>
+                    <div class="p-rl">Blood Group</div>
+                    <div
+                      class="p-rv"
+                      style="color: var(--red); font-weight: 900"
+                    >
+                      O+
+                    </div>
+                  </div>
+                </div>
+                <div class="p-row">
+                  <div class="p-ico">⚠️</div>
+                  <div>
+                    <div class="p-rl">Allergy</div>
+                    <div class="p-rv">Peanuts, Penicillin</div>
+                  </div>
+                </div>
+                <div class="p-row">
+                  <div class="p-ico">📞</div>
+                  <div>
+                    <div class="p-rl">Emergency Contact</div>
+                    <div class="p-rv">Priya Sharma (Mother)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-badge pb1">
+              <div style="font-size: 18px">🔔</div>
+              <div>
+                <div class="pb-n" style="font-size: 11px; color: var(--ok)">
+                  Scan Alert
+                </div>
+                <div class="pb-t">Card scanned · 2m ago</div>
+              </div>
+            </div>
+            <div class="p-badge pb2">
+              <div style="font-size: 18px">🛡️</div>
+              <div>
+                <div class="pb-n" style="font-size: 11px">Profile</div>
+                <div class="pb-t">100% complete</div>
+              </div>
+            </div>
+            <div class="p-badge pb3">
+              <div style="font-size: 10px; font-weight: 900; color: var(--red)">
+                LIVE
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESQID 3D -->
+    <section class="resqid-sec">
+      <div class="resqid-lbl">Unique Student Identity</div>
+      <div class="resqid-wrap" id="rqWrap">
+        <div class="resqid-txt" id="rqTxt">RESQID</div>
+      </div>
+      <p class="resqid-sub">
+        Every card carries a unique cryptographic token — hover to feel it
+      </p>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+      <div class="ticker-track" id="tickerTrack">
+        <span class="ticker-item"
+          ><i class="bi bi-shield-check"></i> Instant QR Scan</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-phone"></i> Parent Mobile App</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-hospital"></i> Emergency Medical Profile</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-building"></i> School Dashboard</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-bell"></i> Real-time Scan Alerts</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-lock"></i> End-to-end Secure</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-credit-card"></i> Physical QR Cards</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-people"></i> Multi-child Support</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-geo-alt"></i> Scan Location Tracking</span
+        >
+        <span class="ticker-item"
+          ><i class="bi bi-clock-history"></i> Full Scan History</span
+        >
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-sec" id="how">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">The Process</div>
+          <h2 class="sec-h">Four steps.<br /><span>Zero confusion.</span></h2>
+          <p class="sec-p mx-auto">
+            From physical card in hand to a fully active emergency profile —
+            takes less than 3 minutes.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 rv d1">
+            <div class="how-card">
+              <div class="step-n">01</div>
+              <div class="how-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="#E8342A"
+                    stroke-width="1.8"
+                  />
+                  <rect
+                    x="14"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="#E8342A"
+                    stroke-width="1.8"
+                  />
+                  <rect
+                    x="3"
+                    y="14"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="#E8342A"
+                    stroke-width="1.8"
+                  />
+                  <rect x="5" y="5" width="3" height="3" fill="#E8342A" />
+                  <rect x="16" y="5" width="3" height="3" fill="#E8342A" />
+                  <rect x="5" y="16" width="3" height="3" fill="#E8342A" />
+                </svg>
+              </div>
+              <div class="how-t">Scan the QR Code</div>
+              <p class="how-d">
+                Anyone — parents, teachers, paramedics — can scan the QR with
+                any smartphone camera.
+              </p>
+              <div class="mt-3">
+                <span class="pill pill-r"
+                  ><i class="bi bi-camera"></i> No app needed to scan</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 rv d2">
+            <div class="how-card">
+              <div class="step-n">02</div>
+              <div class="how-icon">
+                <i
+                  class="bi bi-phone"
+                  style="color: var(--red); font-size: 20px"
+                ></i>
+              </div>
+              <div class="how-t">Register with Mobile No.</div>
+              <p class="how-d">
+                Parent downloads the Guardian app, enters their phone number and
+                card ID to claim ownership via OTP.
+              </p>
+              <div class="mt-3">
+                <span class="pill pill-g"
+                  ><i class="bi bi-shield-check"></i> OTP verified</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 rv d3">
+            <div class="how-card">
+              <div class="step-n">03</div>
+              <div class="how-icon">
+                <i
+                  class="bi bi-person-plus"
+                  style="color: var(--red); font-size: 20px"
+                ></i>
+              </div>
+              <div class="how-t">Add Student Profile</div>
+              <p class="how-d">
+                Fill in name, class, blood group, allergies, medications,
+                emergency contacts — all encrypted and stored securely.
+              </p>
+              <div class="mt-3">
+                <span class="pill pill-r"
+                  ><i class="bi bi-lock"></i> Encrypted at rest</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 rv d4">
+            <div
+              class="how-card"
+              style="
+                border-color: var(--red-bd);
+                background: linear-gradient(
+                  140deg,
+                  rgba(232, 52, 42, 0.05),
+                  var(--s2)
+                );
+              "
+            >
+              <div class="step-n" style="color: rgba(232, 52, 42, 0.14)">
+                04
+              </div>
+              <div
+                class="how-icon"
+                style="background: var(--red); border-color: var(--red)"
+              >
+                <i
+                  class="bi bi-lightning-charge"
+                  style="color: #fff; font-size: 20px"
+                ></i>
+              </div>
+              <div class="how-t">Activate Card — Done!</div>
+              <p class="how-d">
+                Tap "Activate" in the app. The card is now live. Any scan
+                instantly surfaces the emergency profile.
+              </p>
+              <div class="mt-3">
+                <span class="pill pill-g"
+                  ><span class="dot-live"></span> Card goes live instantly</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 rv">
+          <div class="scan-box">
+            <div class="scan-hdr">
+              <div class="scan-dot" style="background: #e8342a"></div>
+              <div
+                class="scan-dot"
+                style="background: #f59e0b; margin-left: 4px"
+              ></div>
+              <div
+                class="scan-dot"
+                style="background: #10b981; margin-left: 4px"
+              ></div>
+              <span class="scan-url"
+                >guardian.schoolqr.app/scan/RESQID-A4F9B2</span
+              >
+            </div>
+            <div class="p-4">
+              <div class="scan-flow row g-0 align-items-center text-center">
+                <div class="col scan-step">
+                  <div class="scan-icon">📱</div>
+                  <div class="scan-lbl">Scan QR</div>
+                </div>
+                <div class="col-auto scan-arr">→</div>
+                <div class="col scan-step">
+                  <div class="scan-icon">🌐</div>
+                  <div class="scan-lbl">Opens Profile</div>
+                </div>
+                <div class="col-auto scan-arr">→</div>
+                <div class="col scan-step">
+                  <div class="scan-icon">🩸</div>
+                  <div class="scan-lbl">Blood Group</div>
+                </div>
+                <div class="col-auto scan-arr">→</div>
+                <div class="col scan-step">
+                  <div class="scan-icon">📞</div>
+                  <div class="scan-lbl">Call Parent</div>
+                </div>
+                <div class="col-auto scan-arr">→</div>
+                <div class="col scan-step">
+                  <div class="scan-icon">🔔</div>
+                  <div class="scan-lbl ok">Parent Alerted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="tl-sec" id="about">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 rv-l">
+            <div class="sec-lbl">The Full Journey</div>
+            <h2 class="sec-h mb-4">
+              Built for the moment<br /><span>seconds matter.</span>
+            </h2>
+            <p style="color: var(--tx2); font-size: 15px; line-height: 1.8">
+              When a child is in distress, nobody has time to make phone calls
+              or search for medical records. SchoolQR Guardian puts everything a
+              responder needs in one scan.
+            </p>
+            <div class="mt-4 d-flex gap-3 flex-wrap">
+              <div
+                class="trust-c flex-fill"
+                style="text-align: left; padding: 14px 18px"
+              >
+                <div style="font-size: 20px; margin-bottom: 3px">🏥</div>
+                <div
+                  style="
+                    font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
+                    font-size: 13px;
+                    font-weight: 900;
+                  "
+                >
+                  Used in real emergencies
+                </div>
+                <div
+                  style="font-size: 11px; color: var(--tx3); margin-top: 3px"
+                >
+                  School medical staff rely on it daily
+                </div>
+              </div>
+              <div
+                class="trust-c flex-fill"
+                style="text-align: left; padding: 14px 18px"
+              >
+                <div style="font-size: 20px; margin-bottom: 3px">🔐</div>
+                <div
+                  style="
+                    font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
+                    font-size: 13px;
+                    font-weight: 900;
+                  "
+                >
+                  Parent-controlled privacy
+                </div>
+                <div
+                  style="font-size: 11px; color: var(--tx3); margin-top: 3px"
+                >
+                  You choose what shows on scan
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 rv-r">
+            <div class="tl-item">
+              <div class="tl-left">
+                <div class="tl-circle">📲</div>
+                <div class="tl-line"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">Step 1</div>
+                <div class="tl-h">Responder scans QR</div>
+                <p class="tl-b">
+                  Any smartphone camera can scan the code on the physical card —
+                  no app install, no login required for the scanner.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-left">
+                <div class="tl-circle">📋</div>
+                <div class="tl-line"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">Step 2</div>
+                <div class="tl-h">Emergency profile surfaces instantly</div>
+                <p class="tl-b">
+                  Blood group, allergies, medications, doctor contact, and
+                  emergency family contacts — all in a single page, no clutter.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-left">
+                <div class="tl-circle">🔔</div>
+                <div class="tl-line"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">Step 3</div>
+                <div class="tl-h">Parent gets a real-time alert</div>
+                <p class="tl-b">
+                  The moment the card is scanned, the parent receives a push
+                  notification with location, time, and scanner details.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-left">
+                <div
+                  class="tl-circle"
+                  style="border-color: var(--ok); background: var(--ok-lt)"
+                >
+                  ✅
+                </div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag" style="color: var(--ok)">Outcome</div>
+                <div class="tl-h">Child gets the right help, fast</div>
+                <p class="tl-b">
+                  No guesswork, no panic. Correct medication info prevents
+                  dangerous mistakes. Parents arrive informed. Every second
+                  saved matters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHYSICAL CARD -->
+    <section class="card-sec">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 rv-l">
+            <div class="sec-lbl">The Physical Card</div>
+            <h2 class="sec-h mb-4">
+              A credit-card sized<br /><span>emergency lifeline.</span>
+            </h2>
+            <p
+              style="
+                color: var(--tx2);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 26px;
+              "
+            >
+              Printed on durable PVC, laminated, sized to fit any wallet, bag,
+              or school ID holder. The QR code is tamper-resistant and unique to
+              each student.
+            </p>
+            <div class="cf-list">
+              <div class="cf-item">
+                <div class="cf-icon">🪪</div>
+                <div>
+                  <div class="cf-t">PVC Laminated, CR80 Size</div>
+                  <div class="cf-d">
+                    Standard credit card dimensions — fits everywhere
+                  </div>
+                </div>
+              </div>
+              <div class="cf-item">
+                <div class="cf-icon">🔒</div>
+                <div>
+                  <div class="cf-t">Unique Encrypted QR Token</div>
+                  <div class="cf-d">
+                    Each QR maps to a cryptographic token — cannot be forged
+                  </div>
+                </div>
+              </div>
+              <div class="cf-item">
+                <div class="cf-icon">🎨</div>
+                <div>
+                  <div class="cf-t">School-branded Design</div>
+                  <div class="cf-d">
+                    Custom logo, colours and tagline for each school
+                  </div>
+                </div>
+              </div>
+              <div class="cf-item">
+                <div class="cf-icon g">♻️</div>
+                <div>
+                  <div class="cf-t">Replaceable Without Profile Loss</div>
+                  <div class="cf-d">
+                    Lost card? Request replacement — profile stays intact
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 rv-r d-flex justify-content-center">
+            <div>
+              <div class="phys-card" id="physCard">
+                <div class="pc-glow"></div>
+                <div class="pc-top">
+                  <div>
+                    <div class="pc-brand">Guardian · SchoolQR</div>
+                    <div
+                      style="font-size: 7px; color: var(--tx3); margin-top: 2px"
+                    >
+                      Emergency Profile Card
+                    </div>
+                  </div>
+                  <div class="pc-live">
+                    <span class="dot-live"></span> Active
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <div class="pc-avatar">👦</div>
+                  <div>
+                    <div class="pc-name">Aryan Sharma</div>
+                    <div class="pc-class">Class 8-A · Delhi Public School</div>
+                  </div>
+                </div>
+                <div class="pc-div"></div>
+                <div class="pc-fields">
+                  <div class="pc-f blood">
+                    <label>Blood Group</label><span>O+</span>
+                  </div>
+                  <div class="pc-f">
+                    <label>Allergy</label><span>Peanuts</span>
+                  </div>
+                  <div class="pc-f">
+                    <label>DOB</label><span>12 Mar 2013</span>
+                  </div>
+                </div>
+                <div class="pc-f mb-3">
+                  <label>Emergency Contact</label
+                  ><span>Priya Sharma · +91 98765 43210</span>
+                </div>
+                <div class="pc-bot">
+                  <div>
+                    <div class="pc-num">RESQID-A4F9B2</div>
+                    <div
+                      style="font-size: 7px; color: var(--tx3); margin-top: 2px"
+                    >
+                      Valid till Dec 2026
+                    </div>
+                  </div>
+                  <div class="pc-qr">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <rect
+                        x="3"
+                        y="3"
+                        width="7"
+                        height="7"
+                        rx="1"
+                        stroke="#E8342A"
+                        stroke-width="1.5"
+                      />
+                      <rect
+                        x="14"
+                        y="3"
+                        width="7"
+                        height="7"
+                        rx="1"
+                        stroke="#E8342A"
+                        stroke-width="1.5"
+                      />
+                      <rect
+                        x="3"
+                        y="14"
+                        width="7"
+                        height="7"
+                        rx="1"
+                        stroke="#E8342A"
+                        stroke-width="1.5"
+                      />
+                      <rect x="5" y="5" width="3" height="3" fill="#E8342A" />
+                      <rect x="16" y="5" width="3" height="3" fill="#E8342A" />
+                      <rect x="5" y="16" width="3" height="3" fill="#E8342A" />
+                      <path
+                        d="M14 14h2v2h-2zM18 14h2v2h-2zM14 18h2v2h-2zM18 18h2v2h-2z"
+                        fill="#E8342A"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <span class="pill pill-g"
+                  ><i class="bi bi-shield-check"></i> Scan with any phone
+                  camera</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES BENTO -->
+    <section class="feat-sec" id="features">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">What You Get</div>
+          <h2 class="sec-h">Everything in one<br /><span>system.</span></h2>
+        </div>
+        <div class="bento rv">
+          <div class="fc fc-7 fc-hero">
+            <div class="row align-items-center g-4">
+              <div class="col-md-6">
+                <div
+                  class="fc-icon"
+                  style="
+                    background: var(--red-lt);
+                    border: 1px solid var(--red-bd);
+                  "
+                >
+                  📱
+                </div>
+                <h4
+                  style="
+                    font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
+                    font-size: 22px;
+                    font-weight: 900;
+                    margin-bottom: 10px;
+                    letter-spacing: -0.02em;
+                  "
+                >
+                  Guardian Parent App
+                </h4>
+                <p
+                  style="font-size: 14px; color: var(--tx2); line-height: 1.74"
+                >
+                  Full mobile app — manage cards, update medical info, view scan
+                  history, control visibility, and get push alerts instantly.
+                </p>
+                <div class="mt-3 d-flex flex-wrap gap-2">
+                  <span class="pill pill-g">Android</span>
+                  <span class="pill pill-g">iOS</span>
+                  <span class="pill pill-g">Web PWA</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="dash-mini">
+                  <div class="dash-row">
+                    <div class="dash-s">
+                      <div class="dash-sl">Total Scans</div>
+                      <div class="dash-sn" style="color: var(--red)">1,240</div>
+                    </div>
+                    <div class="dash-s">
+                      <div class="dash-sl">Active Cards</div>
+                      <div class="dash-sn" style="color: var(--ok)">847</div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      font-size: 10px;
+                      color: var(--tx3);
+                      margin-bottom: 7px;
+                      letter-spacing: 0.06em;
+                      text-transform: uppercase;
+                    "
+                  >
+                    Weekly scan activity
+                  </div>
+                  <div class="bars">
+                    <div class="bar" style="height: 30%; opacity: 0.38"></div>
+                    <div class="bar" style="height: 52%; opacity: 0.52"></div>
+                    <div class="bar" style="height: 70%; opacity: 0.64"></div>
+                    <div class="bar" style="height: 56%; opacity: 0.78"></div>
+                    <div class="bar" style="height: 92%"></div>
+                    <div class="bar" style="height: 64%; opacity: 0.7"></div>
+                    <div class="bar" style="height: 42%; opacity: 0.5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fc fc-5">
+            <div
+              class="fc-icon"
+              style="
+                background: var(--ok-lt);
+                border: 1px solid rgba(16, 185, 129, 0.2);
+              "
+            >
+              🏫
+            </div>
+            <h5>School Dashboard</h5>
+            <p>
+              Full admin panel — view all student cards, manage print batches,
+              monitor scan anomalies, download reports, and configure
+              school-wide settings.
+            </p>
+            <div class="mt-3">
+              <span class="pill pill-r" style="font-size: 9px"
+                >Premium Only</span
+              >
+            </div>
+          </div>
+          <div class="fc fc-4">
+            <div
+              class="fc-icon"
+              style="
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.18);
+              "
+            >
+              🔔
+            </div>
+            <h5>Real-time Scan Alerts</h5>
+            <p>
+              Push notification the instant anyone scans your child's card —
+              with location, device info, and timestamp.
+            </p>
+          </div>
+          <div class="fc fc-4">
+            <div
+              class="fc-icon"
+              style="
+                background: rgba(245, 158, 11, 0.1);
+                border: 1px solid rgba(245, 158, 11, 0.18);
+              "
+            >
+              ⚠️
+            </div>
+            <h5>Anomaly Detection</h5>
+            <p>
+              Flags suspicious scan patterns — multiple rapid scans from
+              different locations, off-hours scans, and more.
+            </p>
+          </div>
+          <div class="fc fc-4">
+            <div
+              class="fc-icon"
+              style="background: var(--red-lt); border: 1px solid var(--red-bd)"
+            >
+              🔒
+            </div>
+            <h5>Privacy Controls</h5>
+            <p>
+              Three visibility levels — Public, Minimal, Hidden. You control
+              exactly which fields appear when scanned.
+            </p>
+          </div>
+          <div class="fc fc-6">
+            <div class="d-flex gap-4 align-items-start">
+              <div
+                class="fc-icon flex-shrink-0"
+                style="
+                  background: var(--ok-lt);
+                  border: 1px solid rgba(16, 185, 129, 0.2);
+                "
+              >
+                📋
+              </div>
+              <div>
+                <h5>Complete Scan History</h5>
+                <p>
+                  Every scan ever made — paginated, filterable by result type,
+                  expandable with full scan details including location and
+                  device.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="fc fc-6">
+            <div class="d-flex gap-4 align-items-start">
+              <div
+                class="fc-icon flex-shrink-0"
+                style="
+                  background: rgba(59, 130, 246, 0.1);
+                  border: 1px solid rgba(59, 130, 246, 0.18);
+                "
+              >
+                🔄
+              </div>
+              <div>
+                <h5>Card Replacement Flow</h5>
+                <p>
+                  Lost or damaged card? Request a replacement in-app. Profile
+                  transfers to the new card automatically — no re-registration
+                  needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-sec">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-6 col-lg-3 rv">
+            <div class="trust-c">
+              <div class="trust-n" data-target="2400" data-suffix="+">
+                2,400+
+              </div>
+              <div class="trust-l">Active Parent Users</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 rv d1">
+            <div class="trust-c">
+              <div class="trust-n" data-target="120" data-suffix="+">120+</div>
+              <div class="trust-l">Partner Schools</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 rv d2">
+            <div class="trust-c">
+              <div class="trust-n" data-target="18000" data-suffix="+">
+                18K+
+              </div>
+              <div class="trust-l">Cards Activated</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 rv d3">
+            <div class="trust-c">
+              <div class="trust-n" data-target="99.9" data-suffix="%">
+                99.9%
+              </div>
+              <div class="trust-l">Uptime Guarantee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi-sec">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">Real Stories</div>
+          <h2 class="sec-h">
+            Parents trust it.<br /><span>Schools love it.</span>
+          </h2>
+        </div>
+        <div class="owl-carousel owl-theme" id="testiCarousel">
+          <div class="testi-c">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-q">
+              My son had an allergic reaction at school. The nurse scanned his
+              card within seconds and knew exactly what to avoid. I got a call
+              and a push notification before I even knew what happened.
+            </p>
+            <div class="testi-auth">
+              <div class="testi-av">P</div>
+              <div>
+                <div class="testi-n">Priya Menon</div>
+                <div class="testi-r">Mother · Class 6 Parent, Bangalore</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-c">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-q">
+              We onboarded 400 students in a single afternoon using the school
+              dashboard. The batch card printing and token management saved us
+              weeks of manual work.
+            </p>
+            <div class="testi-auth">
+              <div class="testi-av">R</div>
+              <div>
+                <div class="testi-n">Ramesh Iyer</div>
+                <div class="testi-r">Principal · DPS Hyderabad</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-c">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-q">
+              The privacy controls are fantastic. I can show blood group and
+              emergency contact but keep medical conditions hidden — exactly
+              what I wanted.
+            </p>
+            <div class="testi-auth">
+              <div class="testi-av">A</div>
+              <div>
+                <div class="testi-n">Aarti Sharma</div>
+                <div class="testi-r">Mother · Mumbai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-c">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-q">
+              Our school medical team relied entirely on paper cards before. Now
+              everything is digital, up-to-date, and we get anomaly alerts if
+              something looks off. Night and day difference.
+            </p>
+            <div class="testi-auth">
+              <div class="testi-av">S</div>
+              <div>
+                <div class="testi-n">Sister Mary</div>
+                <div class="testi-r">School Nurse · Chennai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-c">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-q">
+              Setup took literally 4 minutes. Scanned the QR on my kid's card,
+              entered my number, filled in her profile, hit activate. That was
+              it.
+            </p>
+            <div class="testi-auth">
+              <div class="testi-av">V</div>
+              <div>
+                <div class="testi-n">Vijay Krishnamurthy</div>
+                <div class="testi-r">Father · Pune</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-sec" id="team">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">The People</div>
+          <h2 class="sec-h">
+            Built by people who<br /><span>care deeply.</span>
+          </h2>
+          <p class="sec-p mx-auto">
+            The team behind SchoolQR Guardian — combining expertise in ed-tech,
+            security, and product design to keep children safe.
+          </p>
+        </div>
+        <div class="team-grid rv">
+          <div class="tc-ceo-wrap">
+            <div class="tc tc-ceo">
+              <div class="tc-corner">01 / FOUNDER</div>
+              <div class="tc-av-wrap">
+                <div class="tc-av">
+                  <img
+                    src="https://api.dicebear.com/7.x/notionists/svg?seed=ceo&backgroundColor=1a0808"
+                    alt="CEO"
+                    onerror="
+                      this.style.display = 'none';
+                      this.parentNode.innerHTML = 'AK';
+                    "
+                  />
+                </div>
+                <div class="tc-badge">Founder</div>
+              </div>
+              <div class="tc-name">Animesh Karan</div>
+              <div class="tc-role">Backend Developer & Founder</div>
+              <div class="ceo-line"></div>
+              <p class="tc-bio">
+                Final-year B.Tech student at CEMK and backend developer of the
+                RESQID platform. Animesh is responsible for building the system
+                architecture, QR identity system, and backend services that
+                power the SchoolQR Guardian safety platform. He initiated this
+                startup idea with the goal of creating a simple but impactful
+                technology that can help children receive help quickly during
+                emergencies.
+              </p>
+
+              <div class="ceo-stats">
+                <div class="ceo-stat">
+                  <div class="ceo-sn">B.Tech</div>
+                  <div class="ceo-sl">CEMK</div>
+                </div>
+                <div class="ceo-stat">
+                  <div class="ceo-sn">4th</div>
+                  <div class="ceo-sl">Year Student</div>
+                </div>
+                <div class="ceo-stat">
+                  <div class="ceo-sn">1st</div>
+                  <div class="ceo-sl">Startup Idea</div>
+                </div>
+              </div>
+              <div class="tc-socials">
+                <a
+                  href="https://www.linkedin.com/in/animesh-karan-664247368/"
+                  class="tc-sb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+                <a href="mailto:karananimesh144@gmail.com" class="tc-sb"
+                  ><i class="bi bi-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc-rest">
+            <div class="tc">
+              <div class="tc-corner">02</div>
+              <div class="tc-av-wrap">
+                <div class="tc-av">
+                  <img
+                    src="https://api.dicebear.com/7.x/notionists/svg?seed=cto&backgroundColor=060c1a"
+                    alt="CTO"
+                    onerror="
+                      this.style.display = 'none';
+                      this.parentNode.innerHTML = 'SM';
+                    "
+                  />
+                </div>
+              </div>
+              <div class="tc-name">Souvik Mahata</div>
+              <div class="tc-role">Full Stack Developer</div>
+              <p class="tc-bio">
+                Final-year B.Tech student at CEMK. Souvik works on the core
+                development of the platform including frontend interfaces,
+                backend integration, and system architecture to ensure the
+                RESQID platform runs smoothly and reliably.
+              </p>
+              <div class="tc-socials">
+                <a
+                  href="https://www.linkedin.com/in/souvik-mahata-a2b803239"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tc-sb"
+                  ><i class="bi bi-linkedin"></i></a
+                ><a href="mailto:souvikmahata834@gmail.com" class="tc-sb"
+                  ><i class="bi bi-envelope"></i
+                ></a>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="tc-corner">03</div>
+              <div class="tc-av-wrap">
+                <div class="tc-av">
+                  <img
+                    src="https://api.dicebear.com/7.x/notionists/svg?seed=cpo&backgroundColor=0c1a06"
+                    alt="CPO"
+                    onerror="
+                      this.style.display = 'none';
+                      this.parentNode.innerHTML = 'SK';
+                    "
+                  />
+                </div>
+              </div>
+              <div class="tc-name">Shruti Kumari Mahata</div>
+              <div class="tc-role">AI Engineer</div>
+              <p class="tc-bio">
+                Final-year B.Tech student at CEMK specializing in artificial
+                intelligence. Shruti contributes to intelligent system design
+                and research that can enhance safety features and improve future
+                capabilities of the RESQID platform.
+              </p>
+              <div class="tc-socials">
+                <a
+                  href="https://www.linkedin.com/in/shruti-kumari-mahata-416724239"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tc-sb"
+                  ><i class="bi bi-linkedin"></i></a
+                ><a href="mailto:shrutikumarimahata@gmail.com" class="tc-sb"
+                  ><i class="bi bi-envelope"></i
+                ></a>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="tc-corner">04</div>
+              <div class="tc-av-wrap">
+                <div class="tc-av">
+                  <img
+                    src="https://api.dicebear.com/7.x/notionists/svg?seed=growth&backgroundColor=1a160a"
+                    alt="Growth"
+                    onerror="
+                      this.style.display = 'none';
+                      this.parentNode.innerHTML = 'SG';
+                    "
+                  />
+                </div>
+              </div>
+              <div class="tc-name">Soumya Kumar Ghosh</div>
+              <div class="tc-role">Full Stack Developer</div>
+              <p class="tc-bio">
+                Final-year B.Tech student at CEMK. Soumya works on both frontend
+                and backend development of the RESQID platform and focuses on
+                building user-friendly features that make the system easy to use
+                for parents and schools.
+              </p>
+              <div class="tc-socials">
+                <a
+                  href="https://www.linkedin.com/in/soumya-ghosh-23631b289/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tc-sb"
+                  ><i class="bi bi-linkedin"></i></a
+                ><a href="mailto:ghoshsoumya512@gmail.com" class="tc-sb"
+                  ><i class="bi bi-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="price-sec" id="pricing">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">Simple Pricing</div>
+          <h2 class="sec-h">
+            Transparent plans.<br /><span>No hidden fees.</span>
+          </h2>
+          <p class="sec-p mx-auto">
+            Start with Basic for just ₹249. Upgrade to Premium when your school
+            wants the full dashboard experience.
+          </p>
+        </div>
+        <div class="row g-4 d-lg-none mb-5 rv">
+          <div class="col-md-6">
+            <div
+              style="
+                background: var(--s2);
+                border: 1px solid var(--bd);
+                border-radius: var(--rxl);
+                padding: 28px 26px;
+                height: 100%;
+              "
+            >
+              <div class="pill pill-g mb-3">Basic</div>
+              <div
+                style="
+                  font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
+                  font-size: 36px;
+                  font-weight: 900;
+                  margin-bottom: 3px;
+                  letter-spacing: -0.03em;
+                "
+              >
+                ₹249
+                <span
+                  style="font-size: 13px; color: var(--tx3); font-weight: 400"
+                  >/ per card</span
+                >
+              </div>
+              <p
+                style="font-size: 13px; color: var(--tx2); margin-bottom: 22px"
+              >
+                Everything a parent needs to protect their child.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 11px;
+                  margin: 0;
+                  padding: 0;
+                "
+              >
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Physical QR Card
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Emergency Profile
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Parent Mobile App
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Scan Alerts (Push)
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> 1-year Card Validity
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx3);
+                  "
+                >
+                  <span>✗</span> School Dashboard
+                </li>
+              </ul>
+              <a href="#contact" class="btn-o d-block text-center mt-4"
+                >Get Started — ₹249</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              style="
+                background: linear-gradient(
+                  140deg,
+                  rgba(232, 52, 42, 0.07),
+                  var(--s2)
+                );
+                border: 1px solid var(--red-bd);
+                border-radius: var(--rxl);
+                padding: 28px 26px;
+                height: 100%;
+                position: relative;
+              "
+            >
+              <div class="pill pill-r mb-3">
+                Premium <span class="pop-tag">Popular</span>
+              </div>
+              <div
+                style="
+                  font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
+                  font-size: 36px;
+                  font-weight: 900;
+                  margin-bottom: 3px;
+                  color: var(--red);
+                  letter-spacing: -0.03em;
+                "
+              >
+                ₹349
+                <span
+                  style="font-size: 13px; color: var(--tx3); font-weight: 400"
+                  >/ student / year</span
+                >
+              </div>
+              <p
+                style="font-size: 13px; color: var(--tx2); margin-bottom: 22px"
+              >
+                Full school deployment with admin control.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 11px;
+                  margin: 0;
+                  padding: 0;
+                "
+              >
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Everything in Basic
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> School Admin Dashboard
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Batch Card Printing
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Scan Anomaly Detection
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> SMS + Email Alerts
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 9px;
+                    font-size: 13.5px;
+                    color: var(--tx2);
+                  "
+                >
+                  <span style="color: var(--ok)">✓</span> Custom Card Branding
+                </li>
+              </ul>
+              <a href="#contact" class="btn-r d-block text-center mt-4"
+                ><span>Contact Sales</span>
+                <i class="bi bi-arrow-right btn-icon"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-lg-block rv">
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th style="width: 42%">
+                  <span class="th-lbl">Feature Comparison</span>
+                </th>
+                <th style="width: 29%">
+                  <span class="th-b">Basic</span
+                  ><span class="price-str free">₹249 · per card</span>
+                </th>
+                <th style="width: 29%" class="col-p-h">
+                  <span class="th-p">Premium</span
+                  ><span class="price-str paid">₹349 · student / year</span
+                  ><span class="pop-tag ms-2">Popular</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  colspan="3"
+                  style="
+                    padding: 9px 22px;
+                    background: var(--s3);
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--tx3);
+                  "
+                >
+                  Core Card
+                </td>
+              </tr>
+              <tr>
+                <td>Physical QR Card (PVC Laminated)</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Emergency Medical Profile</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Card Validity</td>
+                <td style="font-weight: 700">1 Year</td>
+                <td class="col-p" style="font-weight: 700; color: var(--red)">
+                  2 Years
+                </td>
+              </tr>
+              <tr>
+                <td>Card Replacement Request</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  colspan="3"
+                  style="
+                    padding: 9px 22px;
+                    background: var(--s3);
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--tx3);
+                  "
+                >
+                  Parent App
+                </td>
+              </tr>
+              <tr>
+                <td>Guardian Parent Mobile App</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Push Scan Notifications</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>SMS + Email Notifications</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Scan History (full)</td>
+                <td><span class="ck-pt">Last 30 days</span></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i> Unlimited
+                </td>
+              </tr>
+              <tr>
+                <td>Privacy / Visibility Controls</td>
+                <td><i class="bi bi-check-circle-fill ck-y"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Multi-child Support</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  colspan="3"
+                  style="
+                    padding: 9px 22px;
+                    background: var(--s3);
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--tx3);
+                  "
+                >
+                  School Dashboard
+                </td>
+              </tr>
+              <tr>
+                <td>School Admin Dashboard</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Batch Card Printing & Management</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Scan Anomaly Detection</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Custom Card Branding</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Trusted Scan Zones</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>API Webhooks</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  colspan="3"
+                  style="
+                    padding: 9px 22px;
+                    background: var(--s3);
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--tx3);
+                  "
+                >
+                  Support
+                </td>
+              </tr>
+              <tr>
+                <td>Support</td>
+                <td>Email (72h)</td>
+                <td class="col-p" style="color: var(--red); font-weight: 700">
+                  Priority (4h SLA)
+                </td>
+              </tr>
+              <tr>
+                <td>Dedicated Account Manager</td>
+                <td><i class="bi bi-x-circle ck-n"></i></td>
+                <td class="col-p">
+                  <i class="bi bi-check-circle-fill ck-y"></i>
+                </td>
+              </tr>
+              <tr style="background: var(--s2)">
+                <td></td>
+                <td style="padding: 22px">
+                  <a
+                    href="#contact"
+                    class="btn-o d-inline-flex"
+                    style="width: 100%; justify-content: center"
+                    >Get Basic — ₹249</a
+                  >
+                </td>
+                <td class="col-p" style="padding: 22px">
+                  <a
+                    href="#contact"
+                    class="btn-r d-inline-flex"
+                    style="width: 100%; justify-content: center"
+                    ><span>Contact Sales</span>
+                    <i class="bi bi-arrow-right btn-icon"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p
+          class="text-center mt-4 rv"
+          style="font-size: 12.5px; color: var(--tx3)"
+        >
+          💡 Schools purchasing 100+ cards get volume pricing.
+          <a href="#contact" style="color: var(--red)">Talk to us →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-sec">
+      <div class="container">
+        <div class="text-center mb-5 rv">
+          <div class="sec-lbl justify-content-center">FAQ</div>
+          <h2 class="sec-h">Questions parents<br /><span>always ask.</span></h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 rv">
+            <div class="accordion" id="faqAcc">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f1"
+                  >
+                    Does the person scanning need to install an app?
+                  </button>
+                </h2>
+                <div
+                  id="f1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    No. Anyone can scan the QR code with their phone's default
+                    camera — it opens a web page directly. Only the parent needs
+                    to install the Guardian app to manage the profile.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f2"
+                  >
+                    Is my child's data safe?
+                  </button>
+                </h2>
+                <div
+                  id="f2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    All sensitive fields are encrypted at rest. You have full
+                    privacy controls — set visibility to Minimal or Hidden at
+                    any time. We never sell or share data with third parties.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f3"
+                  >
+                    What happens if the card is lost or stolen?
+                  </button>
+                </h2>
+                <div
+                  id="f3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    Block the card instantly in the app with one tap. Request a
+                    replacement — when the new card arrives, activate it and all
+                    profile data transfers automatically. The old card becomes
+                    permanently invalid.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f4"
+                  >
+                    Can I manage multiple children?
+                  </button>
+                </h2>
+                <div
+                  id="f4"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    Yes — on the Premium plan. You can link multiple students to
+                    a single parent account, each with their own card, profile,
+                    and notification settings.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f5"
+                  >
+                    How does the school dashboard work?
+                  </button>
+                </h2>
+                <div
+                  id="f5"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    Schools get a web-based admin panel where they can manage
+                    all student cards, print batches, monitor scan logs, set up
+                    trusted scan zones, configure card templates, and receive
+                    anomaly alerts.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#f6"
+                  >
+                    What notification do I get when the card is scanned?
+                  </button>
+                </h2>
+                <div
+                  id="f6"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    Push notification with the date, time, approximate location
+                    (city), and device type. Unusual scans are flagged as
+                    anomalies with a high-priority alert.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-sec" id="contact">
+      <div class="cta-glow"></div>
+      <div class="cta-ring cr1"></div>
+      <div class="cta-ring cr2"></div>
+      <div class="cta-ring cr3"></div>
+      <div class="container position-relative" style="z-index: 2">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center rv">
+            <div class="sec-lbl justify-content-center">Ready to deploy?</div>
+            <h2 class="sec-h mb-4">
+              Protect every student<br /><span>starting today.</span>
+            </h2>
+            <p
+              style="
+                font-size: 16px;
+                color: var(--tx2);
+                line-height: 1.74;
+                margin-bottom: 36px;
+              "
+            >
+              Talk to our team — we'll help you onboard your school, design your
+              cards, and have your first batch activated within a week.
+            </p>
+            <div class="row justify-content-center g-3 mb-5">
+              <div class="col-md-5">
+                <input
+                  type="text"
+                  id="cName"
+                  placeholder="Your full name"
+                  class="f-field"
+                />
+              </div>
+              <div class="col-md-5">
+                <input
+                  type="email"
+                  id="cEmail"
+                  placeholder="School email address"
+                  class="f-field"
+                />
+              </div>
+              <div class="col-md-10">
+                <input
+                  type="text"
+                  id="cSchool"
+                  placeholder="School name + city"
+                  class="f-field"
+                />
+              </div>
+              <div class="col-md-5">
+                <select id="cStudents" class="f-field f-select">
+                  <option value="" disabled selected>Number of students</option>
+                  <option>Under 50 students</option>
+                  <option>50 – 200 students</option>
+                  <option>200 – 500 students</option>
+                  <option>500 – 1,000 students</option>
+                  <option>1,000+ students</option>
+                </select>
+              </div>
+              <div class="col-md-5">
+                <select id="cPlan" class="f-field f-select">
+                  <option value="" disabled selected>
+                    Plan you're interested in
+                  </option>
+                  <option>Basic (₹249/card)</option>
+                  <option>Premium (₹349/student/year)</option>
+                  <option>Not sure — show me both</option>
+                </select>
+              </div>
+              <div class="col-md-10">
+                <input
+                  type="text"
+                  id="cPhone"
+                  placeholder="WhatsApp / phone number (optional)"
+                  class="f-field"
+                />
+              </div>
+              <div class="col-md-10">
+                <button
+                  id="cSubmit"
+                  class="btn-r w-100 justify-content-center"
+                  style="padding: 15px; font-size: 15px"
+                >
+                  <span>Request a Demo</span>
+                  <i class="bi bi-arrow-right btn-icon"></i>
+                </button>
+                <div class="f-ok" id="fOk">
+                  <i class="bi bi-check-circle-fill me-2"></i> Request sent!
+                  We'll contact you within 24 hours.
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 7px;
+                  font-size: 12px;
+                  color: var(--tx3);
+                "
+              >
+                <i class="bi bi-check-circle-fill" style="color: var(--ok)"></i
+                >No commitment required
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 7px;
+                  font-size: 12px;
+                  color: var(--tx3);
+                "
+              >
+                <i class="bi bi-check-circle-fill" style="color: var(--ok)"></i
+                >Reply within 24 hours
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 7px;
+                  font-size: 12px;
+                  color: var(--tx3);
+                "
+              >
+                <i class="bi bi-check-circle-fill" style="color: var(--ok)"></i
+                >Free pilot for 50 students
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="f-logo">RES<span>QID</span></div>
+            <p class="f-desc">
+              QR-based emergency profile system for schools and parents across
+              India. Every child carries their lifeline.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="f-soc"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="f-soc"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="f-soc"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="f-h">Product</div>
+            <ul class="f-links">
+              <li><a href="#how">How It Works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#">Mobile App</a></li>
+              <li><a href="#">School Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="f-h">Company</div>
+            <ul class="f-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="f-h">Legal</div>
+            <ul class="f-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Data Processing</a></li>
+              <li><a href="#">Security</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="f-h">Contact</div>
+            <ul class="f-links">
+              <li>
+                <a href="mailto:karananimesh144@gmail.com"
+                  >karananimesh144@gmail.com</a
+                >
+              </li>
+              <li><a href="tel:+916294690079">+91 629 469 0079</a></li>
+              <li><a href="https://wa.me/+916294690079">Live Chat</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="f-bot">
+          <p class="f-copy">
+            © 2025 RESQID. All rights reserved. Made with ❤️ in India.
+          </p>
+          <div class="d-flex gap-3 align-items-center mt-3 mt-md-0">
+            <span class="pill pill-g" style="font-size: 9px"
+              ><span class="dot-live"></span> All systems operational</span
+            >
+            <span style="font-size: 11px; color: var(--tx3)">v1.0.0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
