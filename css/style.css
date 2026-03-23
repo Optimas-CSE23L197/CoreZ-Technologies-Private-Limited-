@@ -2502,9 +2502,11 @@ footer {
   transition:
     color 0.2s var(--ease-out),
     transform 0.3s var(--ease-spring);
-  display: inline-block;
-  word-break: break-all;
-  overflow-wrap: break-word;
+  display: block;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  white-space: normal;
 }
 .f-links a:hover {
   color: var(--red);
