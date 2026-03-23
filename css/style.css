@@ -47,6 +47,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
 }
 body {
   font-family: "Instrument Sans", sans-serif;
@@ -1570,6 +1571,7 @@ body::before {
 /* ══ BENTO FEATURES ══ */
 .feat-sec {
   padding: var(--sp-xl) 0;
+  overflow: hidden;
 }
 .bento {
   display: grid;
@@ -2634,6 +2636,7 @@ footer {
   }
   .hero {
     padding: 96px 0 56px;
+    overflow: hidden;
   }
   .hero-phone {
     margin-top: 52px;
