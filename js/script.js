@@ -443,6 +443,18 @@ document.querySelectorAll(".tc").forEach(function (card) {
     return a + (b - a) * t;
   }
 
+  card.querySelectorAll(".tc-sb").forEach(function (link) {
+    link.addEventListener("mouseenter", function (e) {
+      e.stopPropagation();
+      hov = false;
+      tX = 0;
+      tY = 0;
+    });
+    link.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  });
+
   function tick() {
     cX = lerp(cX, hov ? tX : 0, 0.09);
     cY = lerp(cY, hov ? tY : 0, 0.09);

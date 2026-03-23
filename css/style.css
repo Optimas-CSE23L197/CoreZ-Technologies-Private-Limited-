@@ -2010,6 +2010,8 @@ body::before {
   display: flex;
   gap: 8px;
   margin-top: 18px;
+  position: relative;
+  z-index: 10;
 }
 .tc-sb {
   width: 32px;
@@ -2028,7 +2030,12 @@ body::before {
     border-color 0.25s var(--ease-out),
     color 0.25s var(--ease-out),
     transform 0.3s var(--ease-spring);
+  position: relative;
+  z-index: 10;
+  pointer-events: all;
+  cursor: pointer;
 }
+
 .tc-sb:hover {
   background: var(--red-lt);
   border-color: var(--red-bd);
@@ -2482,6 +2489,7 @@ footer {
 }
 .f-links {
   list-style: none;
+  overflow: hidden;
 }
 .f-links li {
   margin-bottom: 9px;
@@ -2494,6 +2502,8 @@ footer {
     color 0.2s var(--ease-out),
     transform 0.3s var(--ease-spring);
   display: inline-block;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 .f-links a:hover {
   color: var(--red);
