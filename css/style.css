@@ -57,6 +57,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   cursor: none;
+  width: 100%;
 }
 h1,
 h2,
