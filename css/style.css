@@ -1294,6 +1294,7 @@ body::before {
 .tl-sec {
   padding: var(--sp-xl) 0;
   background: var(--s1);
+  overflow: hidden;
 }
 .tl-item {
   display: flex;
