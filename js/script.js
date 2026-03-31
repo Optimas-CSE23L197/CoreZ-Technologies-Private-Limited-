@@ -495,3 +495,229 @@ document.querySelectorAll(".tc").forEach(function (card) {
     if (!rafId) rafId = requestAnimationFrame(tick);
   });
 });
+
+// =============================================================================
+// EmailJS Configuration
+// =============================================================================
+const EMAILJS_CONFIG = {
+  publicKey: "jWTBkLGozB9yGpOEu",
+  serviceId: "service_pvkmy5q",
+  templateId: "template_9hab3dk",
+};
+
+if (typeof emailjs !== "undefined") {
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+}
+
+// =============================================================================
+// Toast
+// =============================================================================
+function showToast(message, type = "success", duration = 5000) {
+  const existingToast = document.querySelector(".resqid-toast");
+  if (existingToast) existingToast.remove();
+
+  const toast = document.createElement("div");
+  toast.className = `resqid-toast resqid-toast-${type}`;
+  toast.innerHTML = `
+    <div class="resqid-toast-icon">${type === "success" ? "✓" : type === "error" ? "✗" : "ℹ"}</div>
+    <div class="resqid-toast-content">
+      <div class="resqid-toast-title">${type === "success" ? "Success!" : type === "error" ? "Error!" : "Notice"}</div>
+      <div class="resqid-toast-message">${message}</div>
+    </div>
+    <button class="resqid-toast-close">&times;</button>
+  `;
+
+  if (!document.querySelector("#resqidToastStyle")) {
+    const style = document.createElement("style");
+    style.id = "resqidToastStyle";
+    style.textContent = `
+      .resqid-toast {
+        position: fixed; bottom: 24px; right: 24px;
+        min-width: 320px; max-width: 400px;
+        background: #0f0f0f; border: 1px solid #262626;
+        border-radius: 16px; padding: 16px 20px;
+        display: flex; align-items: center; gap: 14px;
+        z-index: 10000; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+        animation: toastIn 0.3s ease;
+      }
+      .resqid-toast-success { border-left: 4px solid #22c55e; }
+      .resqid-toast-error   { border-left: 4px solid #ef4444; }
+      .resqid-toast-info    { border-left: 4px solid #f97316; }
+      .resqid-toast-icon {
+        width: 28px; height: 28px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 16px; font-weight: bold; flex-shrink: 0;
+      }
+      .resqid-toast-success .resqid-toast-icon { background: rgba(34,197,94,0.15); color: #22c55e; }
+      .resqid-toast-error   .resqid-toast-icon { background: rgba(239,68,68,0.15);  color: #ef4444; }
+      .resqid-toast-info    .resqid-toast-icon { background: rgba(249,115,22,0.15); color: #f97316; }
+      .resqid-toast-content { flex: 1; }
+      .resqid-toast-title   { font-weight: 600; color: #fff; font-size: 14px; margin-bottom: 4px; }
+      .resqid-toast-message { color: #a3a3a3; font-size: 13px; line-height: 1.4; }
+      .resqid-toast-close {
+        background: transparent; border: none; color: #666;
+        font-size: 20px; cursor: pointer; padding: 0;
+        width: 24px; height: 24px; display: flex;
+        align-items: center; justify-content: center;
+        border-radius: 8px; transition: all 0.2s;
+      }
+      .resqid-toast-close:hover { background: #1f1f1f; color: #fff; }
+      @keyframes toastIn  { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+      @keyframes toastOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+      .resqid-toast-hide { animation: toastOut 0.3s ease forwards; }
+      @media (max-width: 600px) {
+        .resqid-toast { left: 16px; right: 16px; bottom: 16px; min-width: auto; max-width: none; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  document.body.appendChild(toast);
+
+  toast.querySelector(".resqid-toast-close").addEventListener("click", () => {
+    toast.classList.add("resqid-toast-hide");
+    setTimeout(() => toast.remove(), 300);
+  });
+
+  setTimeout(() => {
+    if (toast.parentNode) {
+      toast.classList.add("resqid-toast-hide");
+      setTimeout(() => toast.remove(), 300);
+    }
+  }, duration);
+}
+
+// =============================================================================
+// Loading State
+// =============================================================================
+function setLoadingState(btn, isLoading) {
+  if (isLoading) {
+    btn._originalHTML = btn.innerHTML;
+    btn.innerHTML =
+      '<span class="loading-spinner"></span><span>Sending...</span>';
+    btn.style.opacity = "0.7";
+    btn.disabled = true;
+
+    if (!document.querySelector("#resqidSpinnerStyle")) {
+      const s = document.createElement("style");
+      s.id = "resqidSpinnerStyle";
+      s.textContent = `
+        .loading-spinner {
+          display: inline-block; width: 16px; height: 16px;
+          border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff;
+          border-radius: 50%; animation: spin 0.6s linear infinite;
+          margin-right: 8px; vertical-align: middle;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+      `;
+      document.head.appendChild(s);
+    }
+  } else {
+    btn.innerHTML = btn._originalHTML;
+    btn.style.opacity = "1";
+    btn.disabled = false;
+  }
+}
+
+// =============================================================================
+// Field Error Highlight
+// =============================================================================
+function markField(field, valid) {
+  if (valid) {
+    field.style.borderColor = "";
+    field.style.boxShadow = "";
+  } else {
+    field.style.borderColor = "var(--red, #ef4444)";
+    field.style.boxShadow = "0 0 0 3px rgba(239,68,68,0.12)";
+  }
+  return valid;
+}
+
+// =============================================================================
+// Submit Handler
+// =============================================================================
+document
+  .getElementById("cSubmit")
+  .addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    const nameEl = document.getElementById("cName");
+    const emailEl = document.getElementById("cEmail");
+    const schoolEl = document.getElementById("cSchool");
+    const studentsEl = document.getElementById("cStudents");
+    const planEl = document.getElementById("cPlan");
+    const phoneEl = document.getElementById("cPhone");
+
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim(); // OPTIONAL
+    const school = schoolEl.value.trim();
+    const students = studentsEl.value;
+    const plan = planEl.value;
+    const phone = phoneEl.value.trim(); // OPTIONAL
+
+    // Validate
+    const v = [
+      markField(nameEl, name.length >= 2),
+      markField(emailEl, !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+      markField(schoolEl, school.length >= 3),
+      markField(studentsEl, !!students),
+      markField(planEl, !!plan),
+      markField(phoneEl, !phone || /^[0-9+\-\s]{7,15}$/.test(phone)),
+    ];
+
+    if (v.includes(false)) {
+      showToast("Please fill in all required fields correctly.", "error", 4000);
+      return;
+    }
+
+    const btn = this;
+    setLoadingState(btn, true);
+
+    try {
+      // ─── TEMPLATE PARAMS ─────────────────────────────────────────────────────
+      // Variable names MUST match your EmailJS template exactly: {{name}}, {{email}}, etc.
+      const templateParams = {
+        name: name,
+        email: email || "Not provided",
+        school: school,
+        students: students,
+        plan: plan,
+        phone: phone || "Not provided",
+      };
+      // ─────────────────────────────────────────────────────────────────────────
+
+      if (typeof emailjs !== "undefined") {
+        await emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          templateParams,
+        );
+      } else {
+        // Dev fallback — remove in production
+        console.log("[RESQID] Demo request (simulated):", templateParams);
+        await new Promise((r) => setTimeout(r, 800));
+      }
+
+      showToast(
+        "Demo request sent! We'll contact you within 24 hours.",
+        "success",
+        6000,
+      );
+
+      const fOk = document.getElementById("fOk");
+      if (fOk) fOk.style.display = "block";
+      btn.style.display = "none";
+
+      // Reset field styles
+      [nameEl, emailEl, schoolEl, studentsEl, planEl, phoneEl].forEach((f) => {
+        f.style.borderColor = "";
+        f.style.boxShadow = "";
+        if (f.tagName === "SELECT") f.selectedIndex = 0;
+        else f.value = "";
+      });
+    } catch (err) {
+      console.error("[RESQID] EmailJS error:", err);
+      showToast("Something went wrong. Please try again.", "error", 5000);
+      setLoadingState(btn, false);
+    }
+  });
