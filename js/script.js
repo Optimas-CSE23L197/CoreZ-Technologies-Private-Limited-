@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-       CURSOR — RAF loop with lerp, stops when idle
+       CURSOR   RAF loop with lerp, stops when idle
     ═══════════════════════════════════════════════ */
 (function () {
   var dot = document.getElementById("cDot");
@@ -14,7 +14,7 @@
     ry = my;
   var rafId = null;
 
-  // FIX: Track whether cursor has moved recently — stop RAF when idle
+  // FIX: Track whether cursor has moved recently   stop RAF when idle
   var mouseMoved = false;
 
   document.addEventListener(
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* Back to top — native smooth scroll */
+  /* Back to top   native smooth scroll */
   document.getElementById("btt").addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
@@ -172,7 +172,7 @@ $(document).ready(function () {
     },
   });
 
-  /* Smooth anchor scrolling — native scroll */
+  /* Smooth anchor scrolling   native scroll */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       var tgt = document.querySelector(this.getAttribute("href"));
@@ -197,7 +197,7 @@ $(document).ready(function () {
     revObs.observe(el);
   });
 
-  /* ── Bar chart — animate only when visible ── */
+  /* ── Bar chart   animate only when visible ── */
   var barsEl = document.querySelector(".bars");
   if (barsEl) {
     new IntersectionObserver(
@@ -246,7 +246,7 @@ $(document).ready(function () {
     }
   }
 
-  /* ── Counter animation — triggered once via IO ── */
+  /* ── Counter animation   triggered once via IO ── */
   var countersDone = false;
   var ctrObs = new IntersectionObserver(
     function (entries) {
@@ -309,7 +309,7 @@ $(document).ready(function () {
 });
 
 /* ═══════════════════════════════════════════════
-       RESQID 3D — lerp tilt with spring return
+       RESQID 3D   lerp tilt with spring return
     ═══════════════════════════════════════════════ */
 (function () {
   var wrap = document.getElementById("rqWrap");
@@ -376,7 +376,7 @@ $(document).ready(function () {
 })();
 
 /* ═══════════════════════════════════════════════
-       PHYSICAL CARD TILT — lerp spring
+       PHYSICAL CARD TILT   lerp spring
     ═══════════════════════════════════════════════ */
 (function () {
   var pc = document.getElementById("physCard");
@@ -428,7 +428,7 @@ $(document).ready(function () {
 })();
 
 /* ═══════════════════════════════════════════════
-       TEAM CARDS TILT — lerp spring
+       TEAM CARDS TILT   lerp spring
     ═══════════════════════════════════════════════ */
 document.querySelectorAll(".tc").forEach(function (card) {
   var tX = 0,
@@ -693,7 +693,7 @@ document
           templateParams,
         );
       } else {
-        // Dev fallback — remove in production
+        // Dev fallback   remove in production
         console.log("[RESQID] Demo request (simulated):", templateParams);
         await new Promise((r) => setTimeout(r, 800));
       }

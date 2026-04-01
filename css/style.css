@@ -97,7 +97,7 @@ body::before {
   z-index: 9990;
 }
 
-/* ══ CUSTOM CURSOR — RAF-driven for buttery smooth ══ */
+/* ══ CUSTOM CURSOR   RAF-driven for buttery smooth ══ */
 .c-dot {
   width: 8px;
   height: 8px;
@@ -2554,7 +2554,7 @@ footer {
 }
 
 /* ══ SCROLL REVEAL ══ */
-/* Use IntersectionObserver — no scroll event thrash */
+/* Use IntersectionObserver   no scroll event thrash */
 .rv {
   opacity: 0;
   transform: translateY(32px);
