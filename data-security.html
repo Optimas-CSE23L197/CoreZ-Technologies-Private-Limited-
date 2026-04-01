@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Processing &amp; Security – RESQID</title>
+    <meta
+      name="description"
+      content="Data Processing and Security policy for RESQID – QR-based emergency profile system for schools."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_io/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
+
+    <style>
+      :root {
+        --red: #e8342a;
+        --red-dk: #b5241c;
+        --red-lt: rgba(232, 52, 42, 0.09);
+        --red-bd: rgba(232, 52, 42, 0.2);
+        --bg: #070709;
+        --s1: #0d0d10;
+        --s2: #111115;
+        --s3: #18181e;
+        --s4: #1e1e26;
+        --bd: rgba(255, 255, 255, 0.055);
+        --bd2: rgba(255, 255, 255, 0.1);
+        --tx: #f0f0f4;
+        --tx2: rgba(240, 240, 244, 0.58);
+        --tx3: rgba(240, 240, 244, 0.3);
+        --ok: #10b981;
+        --ok-lt: rgba(16, 185, 129, 0.1);
+        --amber: #f59e0b;
+        --r: 12px;
+        --rl: 18px;
+        --rxl: 26px;
+        --ease: cubic-bezier(0.34, 1.18, 0.64, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Instrument Sans", sans-serif;
+        background: var(--bg);
+        color: var(--tx);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        max-width: 100%;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Cabinet Grotesk", sans-serif;
+      }
+      ::selection {
+        background: rgba(232, 52, 42, 0.18);
+        color: var(--red);
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--red-bd);
+        border-radius: 99px;
+      }
+      a {
+        text-decoration: none;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.022;
+        pointer-events: none;
+        z-index: 9990;
+      }
+
+      #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(7, 7, 9, 0.88);
+        backdrop-filter: blur(12px) saturate(1.3);
+        -webkit-backdrop-filter: blur(12px) saturate(1.3);
+        border-bottom: 1px solid var(--bd);
+      }
+      .nav-in {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 24px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+      }
+      .nav-logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s var(--ease-spring),
+          box-shadow 0.3s var(--ease-out);
+      }
+      .nav-logo:hover .nav-logo-icon {
+        transform: rotate(-12deg) scale(1.12);
+        box-shadow: 0 0 22px rgba(232, 52, 42, 0.35);
+      }
+      .nav-logo-txt {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 900;
+        color: var(--tx);
+        letter-spacing: -0.02em;
+      }
+      .nav-logo-txt span {
+        color: var(--red);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--tx2);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--bd);
+        transition:
+          color 0.2s var(--ease-out),
+          border-color 0.2s var(--ease-out),
+          background 0.2s var(--ease-out);
+      }
+      .back-link:hover {
+        color: var(--tx);
+        border-color: var(--bd2);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .page-hero {
+        padding: 140px 0 72px;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--bd);
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse 60% 70% at 50% 100%,
+            rgba(16, 185, 129, 0.05),
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 80% 50% at 15% 40%,
+            rgba(232, 52, 42, 0.04),
+            transparent 55%
+          );
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(232, 52, 42, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(232, 52, 42, 0.025) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(
+          ellipse 82% 82% at 50% 50%,
+          black 30%,
+          transparent 100%
+        );
+      }
+      .hero-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 14px 5px 6px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--tx2);
+        margin-bottom: 24px;
+        backdrop-filter: blur(8px);
+      }
+      .badge-dot {
+        background: var(--red);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 900;
+        padding: 2px 9px;
+        border-radius: 99px;
+        letter-spacing: 0.06em;
+      }
+      .hero-title {
+        font-size: clamp(34px, 5vw, 64px);
+        font-weight: 900;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin-bottom: 18px;
+      }
+      .hero-title span {
+        color: var(--red);
+      }
+      .hero-sub {
+        font-size: 16px;
+        color: var(--tx2);
+        line-height: 1.78;
+        max-width: 560px;
+        margin: 0 auto 24px;
+      }
+      .hero-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: var(--tx3);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 6px 14px;
+        font-family: "Geist Mono", monospace;
+      }
+
+      .page-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 64px 24px 100px;
+      }
+      .sec-lbl {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .sec-lbl::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 2px;
+        background: var(--red);
+        border-radius: 2px;
+      }
+
+      /* SECURITY BADGES */
+      .security-badges {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        gap: 12px;
+        margin-bottom: 52px;
+      }
+      .sec-badge {
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--rl);
+        padding: 20px 16px;
+        text-align: center;
+        transition:
+          border-color 0.3s var(--ease-out),
+          transform 0.4s var(--ease-spring),
+          box-shadow 0.3s var(--ease-out);
+      }
+      .sec-badge:hover {
+        border-color: var(--red-bd);
+        transform: translateY(-5px);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.38);
+      }
+      .sec-badge .b-icon {
+        font-size: 1.7rem;
+        margin-bottom: 9px;
+      }
+      .sec-badge strong {
+        display: block;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 900;
+        color: var(--tx);
+        margin-bottom: 4px;
+      }
+      .sec-badge span {
+        font-size: 0.76rem;
+        color: var(--tx3);
+        line-height: 1.5;
+      }
+
+      .section {
+        margin-bottom: 48px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--bd);
+      }
+      .section-num {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        color: var(--red);
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .section h2 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--tx);
+        letter-spacing: -0.02em;
+      }
+      .section p {
+        font-size: 0.93rem;
+        color: var(--tx2);
+        line-height: 1.78;
+        margin-bottom: 12px;
+      }
+      .section p:last-child {
+        margin-bottom: 0;
+      }
+      .section p strong {
+        color: var(--tx);
+        font-weight: 700;
+      }
+      .section ul {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--rl);
+        overflow: hidden;
+      }
+      .section ul li {
+        font-size: 0.92rem;
+        color: var(--tx2);
+        padding: 12px 18px 12px 42px;
+        position: relative;
+        border-bottom: 1px solid var(--bd);
+        line-height: 1.68;
+        transition: background 0.2s var(--ease-out);
+      }
+      .section ul li:hover {
+        background: rgba(255, 255, 255, 0.014);
+      }
+      .section ul li:last-child {
+        border-bottom: none;
+      }
+      .section ul li::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ok);
+      }
+      .section ul li strong {
+        color: var(--tx);
+        font-weight: 700;
+      }
+
+      /* FLOW STEPS */
+      .flow-steps {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .flow-step {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--r);
+        padding: 18px;
+        transition:
+          border-color 0.25s var(--ease-out),
+          transform 0.3s var(--ease-spring);
+      }
+      .flow-step:hover {
+        border-color: var(--red-bd);
+        transform: translateX(4px);
+      }
+      .step-num {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--red);
+        color: #fff;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+        box-shadow: 0 4px 14px rgba(232, 52, 42, 0.3);
+      }
+      .flow-step strong {
+        display: block;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 900;
+        color: var(--tx);
+        margin-bottom: 4px;
+      }
+      .flow-step p {
+        font-size: 0.85rem;
+        color: var(--tx2);
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      /* TABLE */
+      .data-table-wrap {
+        margin-top: 12px;
+        border-radius: var(--rl);
+        overflow: hidden;
+        border: 1px solid var(--bd);
+      }
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .data-table th {
+        background: var(--s3);
+        color: var(--tx2);
+        padding: 11px 16px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--bd);
+      }
+      .data-table td {
+        padding: 11px 16px;
+        border-bottom: 1px solid var(--bd);
+        color: var(--tx2);
+        line-height: 1.6;
+        transition: background 0.2s;
+      }
+      .data-table tr:hover td {
+        background: rgba(255, 255, 255, 0.012);
+      }
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table td:first-child {
+        color: var(--tx);
+        font-weight: 600;
+      }
+
+      /* COMPLIANCE TAGS */
+      .compliance-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .comp-tag {
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--r);
+        padding: 9px 16px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--tx2);
+        transition:
+          border-color 0.25s var(--ease-out),
+          color 0.25s,
+          transform 0.3s var(--ease-spring);
+      }
+      .comp-tag:hover {
+        border-color: var(--red-bd);
+        color: var(--red);
+        transform: translateY(-2px);
+      }
+
+      .contact-box {
+        background: linear-gradient(140deg, #160606, #1a0808, #0c0c0e);
+        border: 1px solid var(--red-bd);
+        border-radius: var(--rxl);
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 14px 50px rgba(232, 52, 42, 0.09);
+      }
+      .contact-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--red),
+          transparent
+        );
+      }
+      .contact-box::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(232, 52, 42, 0.09) 0%,
+          transparent 62%
+        );
+        pointer-events: none;
+      }
+      .contact-box h3 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .contact-box p {
+        font-size: 0.9rem;
+        color: var(--tx2);
+        margin-bottom: 24px;
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--tx);
+        padding: 11px 22px;
+        border-radius: 12px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        border: 1px solid var(--bd2);
+        transition:
+          border-color 0.25s var(--ease-out),
+          background 0.25s var(--ease-out),
+          transform 0.3s var(--ease-spring);
+      }
+      .contact-link:hover {
+        border-color: var(--red-bd);
+        background: var(--red-lt);
+        color: var(--tx);
+        transform: translateY(-3px);
+      }
+      .contact-link.primary {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(232, 52, 42, 0.3);
+      }
+      .contact-link.primary:hover {
+        background: var(--red-dk);
+        border-color: var(--red-dk);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 36px rgba(232, 52, 42, 0.5);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 11px;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .pill-g {
+        background: var(--ok-lt);
+        color: var(--ok);
+        border: 1px solid rgba(16, 185, 129, 0.22);
+      }
+      .dot-live {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ok);
+        box-shadow: 0 0 6px var(--ok);
+        animation: pulse-dot 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.45;
+          transform: scale(1.5);
+        }
+      }
+
+      .page-footer {
+        background: var(--s1);
+        border-top: 1px solid var(--bd);
+        padding: 28px 24px;
+        text-align: center;
+      }
+      .page-footer p {
+        font-size: 12px;
+        color: var(--tx3);
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 20px;
+        margin-top: 12px;
+      }
+      .footer-links a {
+        font-size: 12px;
+        color: var(--tx3);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--red);
+      }
+
+      .rv {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s var(--ease-out),
+          transform 0.7s var(--ease-spring);
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .d1 {
+        transition-delay: 0.08s;
+      }
+      .d2 {
+        transition-delay: 0.16s;
+      }
+      .d3 {
+        transition-delay: 0.24s;
+      }
+      .d4 {
+        transition-delay: 0.32s;
+      }
+      .d5 {
+        transition-delay: 0.4s;
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+        .security-badges {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .contact-box {
+          padding: 28px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <div class="nav-in">
+        <a href="/" class="nav-logo">
+          <div class="nav-logo-icon">
+            <img
+              src="assets/favicon_io/favicon-32x32.png"
+              alt=""
+              width="20"
+              onerror="
+                this.style.display = 'none';
+                this.parentNode.innerHTML = '🛡️';
+              "
+            />
+          </div>
+          <span class="nav-logo-txt">RESQ<span>ID</span></span>
+        </a>
+        <a href="/" class="back-link"
+          ><i class="bi bi-arrow-left"></i> Back to Home</a
+        >
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="hero-grid"></div>
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot">LEGAL</span> Official Document
+        </div>
+        <h1 class="hero-title">
+          Data Processing<br />&amp; <span>Security.</span>
+        </h1>
+        <p class="hero-sub">
+          Exactly how RESQID handles, stores, protects, and processes all
+          student and family data on our platform.
+        </p>
+        <div class="hero-meta">
+          <i class="bi bi-calendar3"></i> Last updated: March 2026 &nbsp;·&nbsp;
+          <i class="bi bi-lock"></i> SSL/TLS · Encrypted at rest
+        </div>
+      </div>
+    </section>
+
+    <div class="page-wrap">
+      <!-- BADGES -->
+      <div class="security-badges">
+        <div class="sec-badge rv d1">
+          <div class="b-icon">🔒</div>
+          <strong>SSL/TLS</strong><span>All data encrypted in transit</span>
+        </div>
+        <div class="sec-badge rv d2">
+          <div class="b-icon">🛡️</div>
+          <strong>Encrypted Storage</strong
+          ><span>Sensitive data encrypted at rest</span>
+        </div>
+        <div class="sec-badge rv d3">
+          <div class="b-icon">🔑</div>
+          <strong>Hashed Passwords</strong
+          ><span>Never stored in plain text</span>
+        </div>
+        <div class="sec-badge rv d4">
+          <div class="b-icon">📍</div>
+          <strong>Minimal Exposure</strong
+          ><span>Only necessary data is shown</span>
+        </div>
+        <div class="sec-badge rv d5">
+          <div class="b-icon">🔔</div>
+          <strong>72h Breach Alert</strong
+          ><span>Fast incident notification</span>
+        </div>
+      </div>
+
+      <!-- 1 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 01</div>
+        <div class="section-header">
+          <div class="section-num">1</div>
+          <h2>What Data We Process</h2>
+        </div>
+        <p>
+          Here is a precise breakdown of every category of data RESQID
+          processes, what it is used for, and who can access it:
+        </p>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data Type</th>
+                <th>Purpose</th>
+                <th>Who Can Access</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Student name &amp; photo</td>
+                <td>Identity shown on the scan page</td>
+                <td>Anyone who scans the QR code</td>
+              </tr>
+              <tr>
+                <td>Blood group, medical info</td>
+                <td>Emergency medical reference for responders</td>
+                <td>Anyone who scans the QR code</td>
+              </tr>
+              <tr>
+                <td>Parent phone number</td>
+                <td>Emergency call initiation only</td>
+                <td>Call button only — number never displayed publicly</td>
+              </tr>
+              <tr>
+                <td>Scan location (GPS)</td>
+                <td>Real-time location alert to parent</td>
+                <td>Registered parent/guardian only</td>
+              </tr>
+              <tr>
+                <td>Scan timestamps &amp; logs</td>
+                <td>Safety audit trail for parents</td>
+                <td>Registered parent/guardian only</td>
+              </tr>
+              <tr>
+                <td>Account email &amp; password</td>
+                <td>Login, authentication, notifications</td>
+                <td>RESQID secure system only</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 02</div>
+        <div class="section-header">
+          <div class="section-num">2</div>
+          <h2>How Data Flows in an Emergency</h2>
+        </div>
+        <p>
+          Here is exactly what happens, step by step, from the moment a QR card
+          is scanned:
+        </p>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-num">1</div>
+            <div>
+              <strong>QR Code Scanned</strong>
+              <p>
+                Someone scans the student's card using any standard smartphone
+                camera — no app installation required for the scanner.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">2</div>
+            <div>
+              <strong>Secure HTTPS Page Loads</strong>
+              <p>
+                An encrypted web page loads instantly, displaying the student's
+                name, photo, and medical info over a secure TLS connection.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">3</div>
+            <div>
+              <strong>Scan Event Securely Logged</strong>
+              <p>
+                The scan timestamp and device location (if permitted by the
+                scanner's device) are encrypted and stored securely in the
+                database.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">4</div>
+            <div>
+              <strong>Parent Notified Instantly</strong>
+              <p>
+                A real-time push notification is sent to the registered parent's
+                Guardian app, including time and approximate location of the
+                scan.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">5</div>
+            <div>
+              <strong>Parent Views Location on Map</strong>
+              <p>
+                The parent can view the scan location pinned on a map within
+                their app to quickly navigate to their child's location.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 16px; font-size: 0.86rem; color: var(--tx3)">
+          <i class="bi bi-shield-check" style="color: var(--ok)"></i> &nbsp;The
+          parent's phone number is
+          <strong style="color: var(--tx2)">never displayed</strong> on the scan
+          page. The emergency call button initiates a direct call without
+          revealing the number to the scanner.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 03</div>
+        <div class="section-header">
+          <div class="section-num">3</div>
+          <h2>Data Storage</h2>
+        </div>
+        <ul>
+          <li>
+            All data is stored on secured cloud servers with strict role-based
+            access controls and full audit logging
+          </li>
+          <li>
+            Student profile data is stored in an AES-256 encrypted database
+          </li>
+          <li>
+            Scan logs and location data are stored in a separate partition with
+            additional access restrictions
+          </li>
+          <li>
+            Encrypted backups are taken automatically and stored in
+            geographically separated storage
+          </li>
+          <li>
+            All data is stored in India-based or India-compliant data centres in
+            accordance with applicable law
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 04</div>
+        <div class="section-header">
+          <div class="section-num">4</div>
+          <h2>Data Retention Periods</h2>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Retention Period</th>
+                <th>What Happens After</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Student profile data</td>
+                <td>Until account deletion</td>
+                <td>Permanently deleted within 30 days</td>
+              </tr>
+              <tr>
+                <td>QR scan logs &amp; location</td>
+                <td>12 months from scan date</td>
+                <td>Automatically and permanently purged</td>
+              </tr>
+              <tr>
+                <td>Account / login data</td>
+                <td>Until account deletion</td>
+                <td>Permanently deleted within 30 days</td>
+              </tr>
+              <tr>
+                <td>System security logs</td>
+                <td>6 months</td>
+                <td>Automatically purged</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 05</div>
+        <div class="section-header">
+          <div class="section-num">5</div>
+          <h2>Security Practices</h2>
+        </div>
+        <ul>
+          <li>
+            <strong>HTTPS everywhere</strong> — Every page, API call, and
+            webhook uses TLS 1.2+ encryption
+          </li>
+          <li>
+            <strong>Password hashing</strong> — All passwords are hashed using
+            bcrypt or argon2. We never store plain-text passwords under any
+            circumstances
+          </li>
+          <li>
+            <strong>Session management</strong> — Login sessions expire
+            automatically after a period of inactivity
+          </li>
+          <li>
+            <strong>Input validation &amp; sanitisation</strong> — All user
+            inputs are strictly validated to prevent SQL injection, XSS, and
+            other common attacks
+          </li>
+          <li>
+            <strong>Rate limiting</strong> — All API endpoints are rate-limited
+            to prevent abuse, brute-force, and scraping attempts
+          </li>
+          <li>
+            <strong>Role-based access control (RBAC)</strong> — Staff, schools,
+            and parents can only access data they are explicitly permitted to
+            see
+          </li>
+          <li>
+            <strong>Security reviews</strong> — We conduct periodic security
+            assessments and penetration testing of the platform
+          </li>
+        </ul>
+      </div>
+
+      <!-- 6 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 06</div>
+        <div class="section-header">
+          <div class="section-num">6</div>
+          <h2>Access Controls</h2>
+        </div>
+        <ul>
+          <li>
+            Only a small number of authorised RESQID technical staff can access
+            backend systems, with every access event logged with timestamp and
+            reason
+          </li>
+          <li>
+            School administrators can only view profiles of students explicitly
+            enrolled under their own institution
+          </li>
+          <li>
+            Parents can only view their own child's data, scan logs, and
+            location history
+          </li>
+          <li>
+            No third party — including advertisers, analytics providers, or
+            partners — has standing access to student data
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 07</div>
+        <div class="section-header">
+          <div class="section-num">7</div>
+          <h2>Data Breach Response</h2>
+        </div>
+        <p>
+          In the unlikely event of a data security incident, RESQID commits to
+          the following response protocol:
+        </p>
+        <ul>
+          <li>
+            Notify all affected users within <strong>72 hours</strong> of
+            becoming aware of the breach
+          </li>
+          <li>
+            Report to relevant Indian data protection authorities as required
+            under the DPDPA 2023
+          </li>
+          <li>
+            Immediately contain, investigate, and remediate the security issue
+            with full priority
+          </li>
+          <li>
+            Provide clear, plain-language guidance to affected users on steps
+            they should take to protect themselves
+          </li>
+          <li>
+            Publish a post-incident report for transparency after the incident
+            is resolved
+          </li>
+        </ul>
+        <p style="margin-top: 14px; font-size: 0.86rem; color: var(--tx3)">
+          To report a vulnerability or security concern:
+          <strong style="color: var(--tx2)">security@getresqid.in</strong>
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 08</div>
+        <div class="section-header">
+          <div class="section-num">8</div>
+          <h2>Your Control Over Your Data</h2>
+        </div>
+        <ul>
+          <li>
+            Update any student information at any time directly from your
+            Guardian app dashboard
+          </li>
+          <li>
+            Instantly deactivate a student's QR card from the app if a card is
+            lost or stolen
+          </li>
+          <li>
+            Request a downloadable copy of all your data by contacting
+            <strong>privacy@getresqid.in</strong>
+          </li>
+          <li>
+            Permanently delete your account and all associated data at any time
+            from account settings
+          </li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 09</div>
+        <div class="section-header">
+          <div class="section-num">9</div>
+          <h2>Legal Compliance</h2>
+        </div>
+        <p>
+          RESQID is designed and operated in compliance with applicable Indian
+          data protection and technology law:
+        </p>
+        <div class="compliance-list">
+          <span class="comp-tag">Information Technology Act, 2000</span>
+          <span class="comp-tag"
+            >Digital Personal Data Protection Act, 2023</span
+          >
+          <span class="comp-tag"
+            >IT (Reasonable Security Practices) Rules, 2011</span
+          >
+        </div>
+      </div>
+
+      <div class="contact-box rv">
+        <h3>Security or data concerns?</h3>
+        <p>
+          Our security team responds to all queries and vulnerability reports
+          with full priority.
+        </p>
+        <div class="contact-links">
+          <a class="contact-link primary" href="mailto:security@getresqid.in"
+            ><i class="bi bi-shield-lock"></i> security@getresqid.in</a
+          >
+          <a class="contact-link" href="mailto:privacy@getresqid.in"
+            ><i class="bi bi-envelope"></i> privacy@getresqid.in</a
+          >
+          <a class="contact-link" href="/privacy-policy.html"
+            ><i class="bi bi-shield-check"></i> Privacy Policy</a
+          >
+          <a class="contact-link" href="/"
+            ><i class="bi bi-house"></i> Back to Home</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <p>
+        © 2026 RESQID. All rights reserved. Made with ❤️ in India. &nbsp;·&nbsp;
+        <span class="pill pill-g" style="font-size: 9px"
+          ><span class="dot-live"></span> All systems operational</span
+        >
+      </p>
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/data-security.html">Data Processing &amp; Security</a>
+        <a href="mailto:support@getresqid.in">support@getresqid.in</a>
+      </div>
+    </footer>
+
+    <script>
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("vis");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".rv").forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

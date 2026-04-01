@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow RESQID – Coming Soon</title>
+    <meta
+      name="description"
+      content="RESQID is arriving on social media. Be the first to know when we go live."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --red: #e8342a;
+        --red-dk: #b5241c;
+        --red-lt: rgba(232, 52, 42, 0.09);
+        --red-bd: rgba(232, 52, 42, 0.2);
+        --red-glow: rgba(232, 52, 42, 0.15);
+        --bg: #070709;
+        --s1: #0d0d10;
+        --s2: #111115;
+        --s3: #18181e;
+        --s4: #1e1e26;
+        --bd: rgba(255, 255, 255, 0.055);
+        --bd2: rgba(255, 255, 255, 0.1);
+        --tx: #f0f0f4;
+        --tx2: rgba(240, 240, 244, 0.58);
+        --tx3: rgba(240, 240, 244, 0.3);
+        --tx4: rgba(240, 240, 244, 0.15);
+        --ok: #10b981;
+        --ok-lt: rgba(16, 185, 129, 0.1);
+        --r: 12px;
+        --rl: 18px;
+        --rxl: 26px;
+        --ease: cubic-bezier(0.34, 1.18, 0.64, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Instrument Sans", sans-serif;
+        background: var(--bg);
+        color: var(--tx);
+        overflow-x: hidden;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Cabinet Grotesk", sans-serif;
+      }
+
+      ::selection {
+        background: rgba(232, 52, 42, 0.18);
+        color: var(--red);
+      }
+
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--red-bd);
+        border-radius: 99px;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ── NOISE OVERLAY ── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.022;
+        pointer-events: none;
+        z-index: 9990;
+      }
+
+      /* ── AMBIENT BACKGROUND ── */
+      .bg-ambient {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .bg-ambient::before {
+        content: "";
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -60%);
+        background: radial-gradient(
+          ellipse,
+          rgba(232, 52, 42, 0.07) 0%,
+          transparent 65%
+        );
+        animation: pulse-bg 8s ease-in-out infinite alternate;
+      }
+
+      .bg-ambient::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        right: -100px;
+        bottom: -100px;
+        background: radial-gradient(
+          ellipse,
+          rgba(232, 52, 42, 0.04) 0%,
+          transparent 65%
+        );
+        animation: pulse-bg 11s ease-in-out infinite alternate-reverse;
+      }
+
+      .bg-grid {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image:
+          linear-gradient(rgba(232, 52, 42, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(232, 52, 42, 0.025) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(
+          ellipse 80% 80% at 50% 50%,
+          black 0%,
+          transparent 100%
+        );
+      }
+
+      @keyframes pulse-bg {
+        from {
+          opacity: 0.6;
+          transform: translate(-50%, -60%) scale(1);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -60%) scale(1.12);
+        }
+      }
+
+      /* ── NAV ── */
+      #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(7, 7, 9, 0.88);
+        backdrop-filter: blur(12px) saturate(1.3);
+        -webkit-backdrop-filter: blur(12px) saturate(1.3);
+        border-bottom: 1px solid var(--bd);
+      }
+
+      .nav-in {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 24px;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+
+      .nav-logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s var(--ease-spring),
+          box-shadow 0.3s var(--ease-out);
+      }
+
+      .nav-logo:hover .nav-logo-icon {
+        transform: rotate(-12deg) scale(1.12);
+        box-shadow: 0 0 22px rgba(232, 52, 42, 0.35);
+      }
+
+      .nav-logo-txt {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 900;
+        color: var(--tx);
+        letter-spacing: -0.02em;
+      }
+
+      .nav-logo-txt span {
+        color: var(--red);
+      }
+
+      .nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 99px;
+        border: 1px solid var(--bd);
+        background: var(--s2);
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--tx3);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: "Geist Mono", monospace;
+      }
+
+      .dot-pulse {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--red);
+        animation: dot-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes dot-pulse {
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(232, 52, 42, 0.5);
+        }
+        50% {
+          opacity: 0.7;
+          box-shadow: 0 0 0 5px rgba(232, 52, 42, 0);
+        }
+      }
+
+      /* ── MAIN LAYOUT ── */
+      .page-wrap {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 24px 80px;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 64px;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 99px;
+        border: 1px solid var(--red-bd);
+        background: var(--red-lt);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--red);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-family: "Geist Mono", monospace;
+        margin-bottom: 28px;
+        animation: fade-up 0.6s var(--ease-out) both;
+      }
+
+      .hero-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: clamp(2.6rem, 6vw, 4.2rem);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--tx);
+        margin-bottom: 22px;
+        animation: fade-up 0.6s var(--ease-out) 0.1s both;
+      }
+
+      .hero-title .accent {
+        color: var(--red);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-title .accent::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--red), transparent);
+        border-radius: 99px;
+        opacity: 0.5;
+      }
+
+      .hero-body {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--tx2);
+        max-width: 480px;
+        margin: 0 auto;
+        animation: fade-up 0.6s var(--ease-out) 0.2s both;
+      }
+
+      /* ── SOCIAL GRID ── */
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto;
+        animation: fade-up 0.6s var(--ease-out) 0.3s both;
+      }
+
+      @media (max-width: 600px) {
+        .social-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .social-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .social-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 22px 20px;
+        border-radius: var(--rl);
+        border: 1px solid var(--bd);
+        background: var(--s1);
+        cursor: pointer;
+        overflow: hidden;
+        transition:
+          border-color 0.25s var(--ease-out),
+          transform 0.35s var(--ease-spring),
+          box-shadow 0.3s var(--ease-out);
+        text-align: left;
+      }
+
+      .social-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.3s var(--ease-out);
+      }
+
+      .social-card:hover {
+        transform: translateY(-4px) scale(1.015);
+        border-color: var(--bd2);
+      }
+
+      .social-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Per-platform accent colors */
+      .social-card[data-platform="instagram"] {
+        --accent: #e1306c;
+      }
+      .social-card[data-platform="linkedin"] {
+        --accent: #0a66c2;
+      }
+      .social-card[data-platform="twitter"] {
+        --accent: #1d9bf0;
+      }
+      .social-card[data-platform="facebook"] {
+        --accent: #1877f2;
+      }
+      .social-card[data-platform="youtube"] {
+        --accent: #ff0000;
+      }
+      .social-card[data-platform="whatsapp"] {
+        --accent: #25d366;
+      }
+
+      .social-card::before {
+        background: radial-gradient(
+          ellipse 120% 120% at 0% 0%,
+          rgba(var(--accent-rgb, 232, 52, 42), 0.06),
+          transparent 70%
+        );
+      }
+
+      .social-card:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+
+      /* Accent glow on hover via pseudo + custom props */
+      .social-card[data-platform="instagram"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(225, 48, 108, 0.1);
+        border-color: rgba(225, 48, 108, 0.2);
+      }
+      .social-card[data-platform="linkedin"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(10, 102, 194, 0.12);
+        border-color: rgba(10, 102, 194, 0.25);
+      }
+      .social-card[data-platform="twitter"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(29, 155, 240, 0.12);
+        border-color: rgba(29, 155, 240, 0.25);
+      }
+      .social-card[data-platform="facebook"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(24, 119, 242, 0.12);
+        border-color: rgba(24, 119, 242, 0.25);
+      }
+      .social-card[data-platform="youtube"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(255, 0, 0, 0.12);
+        border-color: rgba(255, 0, 0, 0.2);
+      }
+      .social-card[data-platform="whatsapp"]:hover {
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 24px rgba(37, 211, 102, 0.12);
+        border-color: rgba(37, 211, 102, 0.2);
+      }
+
+      .card-icon-wrap {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        background: var(--s3);
+        border: 1px solid var(--bd);
+        transition:
+          transform 0.35s var(--ease-spring),
+          background 0.25s;
+        flex-shrink: 0;
+      }
+
+      .social-card:hover .card-icon-wrap {
+        transform: scale(1.1) rotate(-6deg);
+      }
+
+      /* Icon colors */
+      .social-card[data-platform="instagram"] .card-icon-wrap {
+        color: #e1306c;
+      }
+      .social-card[data-platform="linkedin"] .card-icon-wrap {
+        color: #0a66c2;
+      }
+      .social-card[data-platform="twitter"] .card-icon-wrap {
+        color: #1d9bf0;
+      }
+      .social-card[data-platform="facebook"] .card-icon-wrap {
+        color: #1877f2;
+      }
+      .social-card[data-platform="youtube"] .card-icon-wrap {
+        color: #ff0000;
+      }
+      .social-card[data-platform="whatsapp"] .card-icon-wrap {
+        color: #25d366;
+      }
+
+      .card-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .card-name {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--tx);
+        margin-bottom: 4px;
+        letter-spacing: -0.02em;
+      }
+
+      .card-handle {
+        font-family: "Geist Mono", monospace;
+        font-size: 11px;
+        color: var(--tx3);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .card-badge {
+        margin-top: 2px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 3px 10px;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-family: "Geist Mono", monospace;
+        background: var(--s3);
+        border: 1px solid var(--bd);
+        color: var(--tx3);
+        width: fit-content;
+        transition: all 0.25s var(--ease-out);
+      }
+
+      .card-badge i {
+        font-size: 8px;
+      }
+
+      .card-arrow {
+        position: absolute;
+        top: 20px;
+        right: 18px;
+        color: var(--tx4);
+        font-size: 14px;
+        transition:
+          transform 0.3s var(--ease-spring),
+          color 0.2s;
+      }
+
+      .social-card:hover .card-arrow {
+        color: var(--tx2);
+        transform: translate(3px, -3px);
+      }
+
+      /* ── MODAL ── */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9000;
+        background: rgba(7, 7, 9, 0.85);
+        backdrop-filter: blur(12px) saturate(1.3);
+        -webkit-backdrop-filter: blur(12px) saturate(1.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s var(--ease-out);
+      }
+
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .modal {
+        position: relative;
+        background: var(--s2);
+        border: 1px solid var(--bd2);
+        border-radius: var(--rxl);
+        padding: 48px 40px 40px;
+        max-width: 440px;
+        width: 100%;
+        text-align: center;
+        transform: scale(0.92) translateY(20px);
+        transition: transform 0.4s var(--ease-spring);
+        box-shadow:
+          0 32px 80px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(255, 255, 255, 0.04);
+      }
+
+      .modal-overlay.open .modal {
+        transform: scale(1) translateY(0);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid var(--bd);
+        background: var(--s3);
+        color: var(--tx3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.2s var(--ease-out);
+      }
+
+      .modal-close:hover {
+        background: var(--s4);
+        color: var(--tx);
+        border-color: var(--bd2);
+      }
+
+      .modal-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin: 0 auto 24px;
+        border: 1px solid var(--bd);
+        background: var(--s3);
+        transition: transform 0.4s var(--ease-spring);
+      }
+
+      .modal-overlay.open .modal-icon {
+        animation: icon-bounce 0.6s var(--ease-spring) 0.1s both;
+      }
+
+      @keyframes icon-bounce {
+        from {
+          transform: scale(0.7) rotate(-10deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .modal-platform {
+        font-family: "Geist Mono", monospace;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--tx3);
+        margin-bottom: 10px;
+      }
+
+      .modal-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1.75rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: var(--tx);
+        margin-bottom: 14px;
+        line-height: 1.1;
+      }
+
+      .modal-body {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--tx2);
+        margin-bottom: 28px;
+      }
+
+      .modal-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 26px;
+        border-radius: var(--r);
+        background: var(--s3);
+        border: 1px solid var(--bd2);
+        color: var(--tx2);
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: default;
+        margin-bottom: 16px;
+        width: 100%;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+
+      .modal-note {
+        font-size: 11px;
+        color: var(--tx3);
+        font-family: "Geist Mono", monospace;
+        letter-spacing: 0.03em;
+      }
+
+      .modal-note a {
+        color: var(--red);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* ── FOOTER STRIP ── */
+      .bottom-strip {
+        margin-top: 72px;
+        text-align: center;
+        animation: fade-up 0.6s var(--ease-out) 0.45s both;
+      }
+
+      .bottom-strip p {
+        font-size: 12px;
+        color: var(--tx3);
+        font-family: "Geist Mono", monospace;
+        letter-spacing: 0.03em;
+      }
+
+      .bottom-strip a {
+        color: var(--tx2);
+        transition: color 0.2s;
+      }
+
+      .bottom-strip a:hover {
+        color: var(--tx);
+      }
+
+      .divider {
+        display: inline-block;
+        margin: 0 10px;
+        opacity: 0.3;
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── STAGGER CARDS ── */
+      .social-card:nth-child(1) {
+        animation: fade-up 0.5s var(--ease-out) 0.3s both;
+      }
+      .social-card:nth-child(2) {
+        animation: fade-up 0.5s var(--ease-out) 0.36s both;
+      }
+      .social-card:nth-child(3) {
+        animation: fade-up 0.5s var(--ease-out) 0.42s both;
+      }
+      .social-card:nth-child(4) {
+        animation: fade-up 0.5s var(--ease-out) 0.48s both;
+      }
+      .social-card:nth-child(5) {
+        animation: fade-up 0.5s var(--ease-out) 0.54s both;
+      }
+      .social-card:nth-child(6) {
+        animation: fade-up 0.5s var(--ease-out) 0.6s both;
+      }
+
+      /* ── RIPPLE ── */
+      .ripple-ring {
+        position: absolute;
+        inset: -40px;
+        border-radius: 50%;
+        border: 1px dashed var(--red-bd);
+        animation: ripple-spin 30s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes ripple-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hero-icon-wrap {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: var(--red);
+        position: relative;
+        z-index: 1;
+        animation: hero-icon-float 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes hero-icon-float {
+        from {
+          transform: translateY(0px) rotate(0deg);
+        }
+        to {
+          transform: translateY(-6px) rotate(3deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Backgrounds -->
+    <div class="bg-ambient"></div>
+    <div class="bg-grid"></div>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <div class="nav-in">
+        <a href="/" class="nav-logo">
+          <div class="nav-logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2L3 7v5c0 5.25 3.8 10.15 9 11.35C17.2 22.15 21 17.25 21 12V7L12 2z"
+                fill="#e8342a"
+                opacity=".18"
+              />
+              <path
+                d="M12 2L3 7v5c0 5.25 3.8 10.15 9 11.35C17.2 22.15 21 17.25 21 12V7L12 2z"
+                stroke="#e8342a"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 12l2 2 4-4"
+                stroke="#e8342a"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span class="nav-logo-txt">RESQ<span>ID</span></span>
+        </a>
+        <div class="nav-badge">
+          <div class="dot-pulse"></div>
+          Building in Public
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page -->
+    <div class="page-wrap">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-icon-wrap">
+          <div class="ripple-ring"></div>
+          <div class="hero-icon">
+            <i class="bi bi-broadcast"></i>
+          </div>
+        </div>
+
+        <div class="hero-eyebrow">
+          <i class="bi bi-clock-history"></i>
+          Coming Soon to All Platforms
+        </div>
+
+        <h1 class="hero-title">
+          We're about to<br />
+          <span class="accent">show up.</span>
+        </h1>
+
+        <p class="hero-body">
+          Our social media presence is currently under construction — just like
+          our product. We're building something worth following. Until we go
+          live, our website is where it all happens.
+        </p>
+      </div>
+
+      <!-- Social Cards -->
+      <div class="social-grid">
+        <!-- Instagram -->
+        <div
+          class="social-card"
+          data-platform="instagram"
+          data-name="Instagram"
+          data-handle="@resqid.in"
+          data-desc="Behind-the-scenes, product updates, and stories from our journey — from student desks to school corridors."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-instagram"></i></div>
+          <div class="card-info">
+            <div class="card-name">Instagram</div>
+            <div class="card-handle">@resqid.in</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div
+          class="social-card"
+          data-platform="linkedin"
+          data-name="LinkedIn"
+          data-handle="RESQID · coreZ Technologies"
+          data-desc="Company milestones, product announcements, and thought leadership on school safety and student tech in India."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-linkedin"></i></div>
+          <div class="card-info">
+            <div class="card-name">LinkedIn</div>
+            <div class="card-handle">coreZ Technologies</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- X / Twitter -->
+        <div
+          class="social-card"
+          data-platform="twitter"
+          data-name="X (Twitter)"
+          data-handle="@resqid_in"
+          data-desc="Real-time product thoughts, launch updates, and honest founder commentary. We'll say what we mean."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-twitter-x"></i></div>
+          <div class="card-info">
+            <div class="card-name">X (Twitter)</div>
+            <div class="card-handle">@resqid_in</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- Facebook -->
+        <div
+          class="social-card"
+          data-platform="facebook"
+          data-name="Facebook"
+          data-handle="RESQID Official"
+          data-desc="Community updates, school partnership news, and parent-facing announcements about RESQID rollouts."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-facebook"></i></div>
+          <div class="card-info">
+            <div class="card-name">Facebook</div>
+            <div class="card-handle">RESQID Official</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div
+          class="social-card"
+          data-platform="youtube"
+          data-name="YouTube"
+          data-handle="RESQID"
+          data-desc="Product walkthroughs, school onboarding guides, and the story of building RESQID from the ground up."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-youtube"></i></div>
+          <div class="card-info">
+            <div class="card-name">YouTube</div>
+            <div class="card-handle">RESQID Channel</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Channel -->
+        <div
+          class="social-card"
+          data-platform="whatsapp"
+          data-name="WhatsApp Channel"
+          data-handle="RESQID Updates"
+          data-desc="Instant launch alerts, school enrollment open dates, and critical product updates — delivered directly to your WhatsApp."
+          onclick="openModal(this)"
+        >
+          <div class="card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+          <div class="card-icon-wrap"><i class="bi bi-whatsapp"></i></div>
+          <div class="card-info">
+            <div class="card-name">WhatsApp Channel</div>
+            <div class="card-handle">RESQID Updates</div>
+            <div class="card-badge">
+              <i class="bi bi-hourglass-split"></i> Coming Soon
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom strip -->
+      <div class="bottom-strip">
+        <p>
+          <a href="/">getresqid.in</a>
+          <span class="divider">·</span>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <span class="divider">·</span>
+          <a href="mailto:hello@getresqid.in">hello@getresqid.in</a>
+          <span class="divider">·</span>
+          © 2026 coreZ Technologies Pvt. Ltd.
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModalBtn()">
+          <i class="bi bi-x"></i>
+        </button>
+
+        <div class="modal-icon" id="modal-icon"></div>
+        <div class="modal-platform" id="modal-platform"></div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-body" id="modal-body"></p>
+
+        <div class="modal-cta">
+          <i class="bi bi-hourglass-split"></i>
+          Page not live yet — check back soon
+        </div>
+
+        <p class="modal-note">
+          In the meantime, visit us at
+          <a href="/">getresqid.in</a>
+          &nbsp;or write to
+          <a href="mailto:hello@getresqid.in">hello@getresqid.in</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const iconMap = {
+        instagram: "bi bi-instagram",
+        linkedin: "bi bi-linkedin",
+        twitter: "bi bi-twitter-x",
+        facebook: "bi bi-facebook",
+        youtube: "bi bi-youtube",
+        whatsapp: "bi bi-whatsapp",
+      };
+
+      const colorMap = {
+        instagram: "#e1306c",
+        linkedin: "#0a66c2",
+        twitter: "#1d9bf0",
+        facebook: "#1877f2",
+        youtube: "#ff0000",
+        whatsapp: "#25d366",
+      };
+
+      function openModal(card) {
+        const platform = card.dataset.platform;
+        const name = card.dataset.name;
+        const handle = card.dataset.handle;
+        const desc = card.dataset.desc;
+        const color = colorMap[platform];
+
+        const icon = document.getElementById("modal-icon");
+        icon.innerHTML = `<i class="${iconMap[platform]}" style="color:${color}"></i>`;
+        icon.style.borderColor = color + "33";
+        icon.style.background = color + "11";
+
+        document.getElementById("modal-platform").textContent =
+          platform.toUpperCase();
+        document.getElementById("modal-title").textContent = name;
+        document.getElementById("modal-body").textContent = desc;
+
+        document.getElementById("modal").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(e) {
+        if (e.target === document.getElementById("modal")) closeModalBtn();
+      }
+
+      function closeModalBtn() {
+        document.getElementById("modal").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModalBtn();
+      });
+    </script>
+  </body>
+</html>

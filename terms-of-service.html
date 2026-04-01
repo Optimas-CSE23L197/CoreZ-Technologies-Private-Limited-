@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service – RESQID</title>
+    <meta
+      name="description"
+      content="Terms of Service for RESQID – QR-based emergency profile system for schools."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Geist+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_io/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
+
+    <style>
+      :root {
+        --red: #e8342a;
+        --red-dk: #b5241c;
+        --red-lt: rgba(232, 52, 42, 0.09);
+        --red-bd: rgba(232, 52, 42, 0.2);
+        --red-glow: rgba(232, 52, 42, 0.4);
+        --bg: #070709;
+        --s1: #0d0d10;
+        --s2: #111115;
+        --s3: #18181e;
+        --s4: #1e1e26;
+        --bd: rgba(255, 255, 255, 0.055);
+        --bd2: rgba(255, 255, 255, 0.1);
+        --tx: #f0f0f4;
+        --tx2: rgba(240, 240, 244, 0.58);
+        --tx3: rgba(240, 240, 244, 0.3);
+        --ok: #10b981;
+        --ok-lt: rgba(16, 185, 129, 0.1);
+        --amber: #f59e0b;
+        --r: 12px;
+        --rl: 18px;
+        --rxl: 26px;
+        --ease: cubic-bezier(0.34, 1.18, 0.64, 1);
+        --ease-s: cubic-bezier(0.25, 0.1, 0.25, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Instrument Sans", sans-serif;
+        background: var(--bg);
+        color: var(--tx);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        max-width: 100%;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Cabinet Grotesk", sans-serif;
+      }
+      ::selection {
+        background: rgba(232, 52, 42, 0.18);
+        color: var(--red);
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--red-bd);
+        border-radius: 99px;
+      }
+      a {
+        text-decoration: none;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.022;
+        pointer-events: none;
+        z-index: 9990;
+      }
+
+      #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(7, 7, 9, 0.88);
+        backdrop-filter: blur(12px) saturate(1.3);
+        -webkit-backdrop-filter: blur(12px) saturate(1.3);
+        border-bottom: 1px solid var(--bd);
+      }
+      .nav-in {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 24px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+      }
+      .nav-logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s var(--ease-spring),
+          box-shadow 0.3s var(--ease-out);
+      }
+      .nav-logo:hover .nav-logo-icon {
+        transform: rotate(-12deg) scale(1.12);
+        box-shadow: 0 0 22px rgba(232, 52, 42, 0.35);
+      }
+      .nav-logo-txt {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 900;
+        color: var(--tx);
+        letter-spacing: -0.02em;
+      }
+      .nav-logo-txt span {
+        color: var(--red);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--tx2);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--bd);
+        transition:
+          color 0.2s var(--ease-out),
+          border-color 0.2s var(--ease-out),
+          background 0.2s var(--ease-out);
+      }
+      .back-link:hover {
+        color: var(--tx);
+        border-color: var(--bd2);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .page-hero {
+        padding: 140px 0 72px;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--bd);
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse 60% 70% at 50% 100%,
+            rgba(232, 52, 42, 0.07),
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 80% 50% at 80% 30%,
+            rgba(232, 52, 42, 0.04),
+            transparent 55%
+          );
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(232, 52, 42, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(232, 52, 42, 0.025) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(
+          ellipse 82% 82% at 50% 50%,
+          black 30%,
+          transparent 100%
+        );
+      }
+      .hero-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 14px 5px 6px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--tx2);
+        margin-bottom: 24px;
+        backdrop-filter: blur(8px);
+      }
+      .badge-dot {
+        background: var(--red);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 900;
+        padding: 2px 9px;
+        border-radius: 99px;
+        letter-spacing: 0.06em;
+      }
+      .hero-title {
+        font-size: clamp(36px, 5.5vw, 68px);
+        font-weight: 900;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin-bottom: 18px;
+      }
+      .hero-title span {
+        color: var(--red);
+      }
+      .hero-sub {
+        font-size: 16px;
+        color: var(--tx2);
+        line-height: 1.78;
+        max-width: 560px;
+        margin: 0 auto 24px;
+      }
+      .hero-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: var(--tx3);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 6px 14px;
+        font-family: "Geist Mono", monospace;
+      }
+
+      .page-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 64px 24px 100px;
+      }
+      .sec-lbl {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .sec-lbl::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 2px;
+        background: var(--red);
+        border-radius: 2px;
+      }
+
+      .notice {
+        background: var(--s2);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        border-left: 3px solid var(--amber);
+        border-radius: var(--rl);
+        padding: 20px 24px;
+        margin-bottom: 52px;
+        font-size: 0.9rem;
+        color: var(--tx2);
+        line-height: 1.7;
+      }
+      .notice strong {
+        color: var(--tx);
+        font-weight: 700;
+      }
+
+      .section {
+        margin-bottom: 48px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--bd);
+      }
+      .section-num {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--red-lt);
+        border: 1px solid var(--red-bd);
+        color: var(--red);
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .section h2 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--tx);
+        letter-spacing: -0.02em;
+      }
+      .section p {
+        font-size: 0.93rem;
+        color: var(--tx2);
+        line-height: 1.78;
+        margin-bottom: 12px;
+      }
+      .section p:last-child {
+        margin-bottom: 0;
+      }
+      .section p strong {
+        color: var(--tx);
+        font-weight: 700;
+      }
+      .section ul {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--rl);
+        overflow: hidden;
+      }
+      .section ul li {
+        font-size: 0.92rem;
+        color: var(--tx2);
+        padding: 12px 18px 12px 42px;
+        position: relative;
+        border-bottom: 1px solid var(--bd);
+        line-height: 1.68;
+        transition: background 0.2s var(--ease-out);
+      }
+      .section ul li:hover {
+        background: rgba(255, 255, 255, 0.014);
+      }
+      .section ul li:last-child {
+        border-bottom: none;
+      }
+      .section ul li::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--red);
+      }
+      .section ul li strong {
+        color: var(--tx);
+        font-weight: 700;
+      }
+
+      /* PROHIBITED GRID */
+      .prohibited-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .prohibited-item {
+        background: var(--s2);
+        border: 1px solid var(--bd);
+        border-radius: var(--r);
+        padding: 14px 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: var(--tx2);
+        line-height: 1.6;
+        transition: border-color 0.25s var(--ease-out);
+      }
+      .prohibited-item:hover {
+        border-color: rgba(232, 52, 42, 0.22);
+      }
+      .prohibited-item .x {
+        color: var(--red);
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 1px;
+        font-weight: 900;
+      }
+
+      /* WARNING */
+      .warning-box {
+        background: rgba(232, 52, 42, 0.06);
+        border: 1px solid var(--red-bd);
+        border-radius: var(--r);
+        padding: 18px 22px;
+        margin-top: 16px;
+        font-size: 0.9rem;
+        color: var(--tx2);
+        line-height: 1.7;
+      }
+      .warning-box strong {
+        display: block;
+        color: var(--red);
+        margin-bottom: 4px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+
+      .contact-box {
+        background: linear-gradient(140deg, #160606, #1a0808, #0c0c0e);
+        border: 1px solid var(--red-bd);
+        border-radius: var(--rxl);
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 14px 50px rgba(232, 52, 42, 0.09);
+      }
+      .contact-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--red),
+          transparent
+        );
+      }
+      .contact-box::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(232, 52, 42, 0.09) 0%,
+          transparent 62%
+        );
+        pointer-events: none;
+      }
+      .contact-box h3 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .contact-box p {
+        font-size: 0.9rem;
+        color: var(--tx2);
+        margin-bottom: 24px;
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--tx);
+        padding: 11px 22px;
+        border-radius: 12px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        border: 1px solid var(--bd2);
+        transition:
+          border-color 0.25s var(--ease-out),
+          background 0.25s var(--ease-out),
+          transform 0.3s var(--ease-spring);
+      }
+      .contact-link:hover {
+        border-color: var(--red-bd);
+        background: var(--red-lt);
+        color: var(--tx);
+        transform: translateY(-3px);
+      }
+      .contact-link.primary {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(232, 52, 42, 0.3);
+      }
+      .contact-link.primary:hover {
+        background: var(--red-dk);
+        border-color: var(--red-dk);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 36px rgba(232, 52, 42, 0.5);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 11px;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .pill-g {
+        background: var(--ok-lt);
+        color: var(--ok);
+        border: 1px solid rgba(16, 185, 129, 0.22);
+      }
+      .dot-live {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ok);
+        box-shadow: 0 0 6px var(--ok);
+        animation: pulse-dot 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.45;
+          transform: scale(1.5);
+        }
+      }
+
+      .page-footer {
+        background: var(--s1);
+        border-top: 1px solid var(--bd);
+        padding: 28px 24px;
+        text-align: center;
+      }
+      .page-footer p {
+        font-size: 12px;
+        color: var(--tx3);
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 20px;
+        margin-top: 12px;
+      }
+      .footer-links a {
+        font-size: 12px;
+        color: var(--tx3);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--red);
+      }
+
+      .rv {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s var(--ease-out),
+          transform 0.7s var(--ease-spring);
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .d1 {
+        transition-delay: 0.08s;
+      }
+      .d2 {
+        transition-delay: 0.16s;
+      }
+      .d3 {
+        transition-delay: 0.24s;
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: 2.2rem;
+        }
+        .prohibited-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-box {
+          padding: 28px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <div class="nav-in">
+        <a href="/" class="nav-logo">
+          <div class="nav-logo-icon">
+            <img
+              src="assets/favicon_io/favicon-32x32.png"
+              alt=""
+              width="20"
+              onerror="
+                this.style.display = 'none';
+                this.parentNode.innerHTML = '🛡️';
+              "
+            />
+          </div>
+          <span class="nav-logo-txt">RESQ<span>ID</span></span>
+        </a>
+        <a href="/" class="back-link"
+          ><i class="bi bi-arrow-left"></i> Back to Home</a
+        >
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="hero-grid"></div>
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot">LEGAL</span> Official Document
+        </div>
+        <h1 class="hero-title">Terms of<br /><span>Service.</span></h1>
+        <p class="hero-sub">
+          The rules and responsibilities that govern your use of the RESQID
+          platform, QR cards, and Guardian app.
+        </p>
+        <div class="hero-meta">
+          <i class="bi bi-calendar3"></i> Last updated: March 2026 &nbsp;·&nbsp;
+          <i class="bi bi-geo-alt"></i> Governed by Indian Law
+        </div>
+      </div>
+    </section>
+
+    <div class="page-wrap">
+      <div class="notice rv">
+        <strong>Please read these Terms carefully before using RESQID.</strong
+        ><br />
+        By registering or using our service — including the website, mobile app,
+        or physical QR card — you agree to be bound by these Terms. If you do
+        not agree, please do not use our services.
+      </div>
+
+      <!-- 1 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 01</div>
+        <div class="section-header">
+          <div class="section-num">1</div>
+          <h2>Who May Use RESQID</h2>
+        </div>
+        <p>RESQID may be used by the following parties:</p>
+        <ul>
+          <li>
+            Parents or legal guardians of school-going students aged 3–18 years
+          </li>
+          <li>
+            Schools, educational institutions, and their officially authorised
+            administrators
+          </li>
+          <li>
+            Any person who scans a student's QR card in a genuine emergency or
+            child-assistance situation
+          </li>
+        </ul>
+        <p style="margin-top: 14px">
+          You must be at least <strong>18 years old</strong> to create a RESQID
+          account. By registering, you confirm that you are the parent/guardian
+          of the enrolled student or an officially authorised school official.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 02</div>
+        <div class="section-header">
+          <div class="section-num">2</div>
+          <h2>Account Registration</h2>
+        </div>
+        <ul>
+          <li>
+            You must provide accurate, current, and complete information during
+            registration
+          </li>
+          <li>
+            You are responsible for maintaining the confidentiality of your
+            login credentials
+          </li>
+          <li>
+            Notify us immediately at <strong>support@getresqid.in</strong> if
+            you suspect any unauthorised access to your account
+          </li>
+          <li>
+            One account may register multiple students belonging to the same
+            family or school (Premium plan)
+          </li>
+          <li>
+            You must not create accounts for students who are not your children
+            or assigned students
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 03</div>
+        <div class="section-header">
+          <div class="section-num">3</div>
+          <h2>QR Card Usage</h2>
+        </div>
+        <ul>
+          <li>
+            The physical QR card is intended solely for student emergency
+            identification purposes
+          </li>
+          <li>
+            You must not reproduce, duplicate, photograph for re-use, or misuse
+            the QR code for any other purpose
+          </li>
+          <li>
+            If a QR card is lost or stolen,
+            <strong>deactivate it immediately</strong> from your app dashboard
+            and request a replacement
+          </li>
+          <li>
+            RESQID is not responsible for any misuse of a QR card that has not
+            been reported as lost or stolen
+          </li>
+          <li>
+            Cards are non-transferable and linked to a specific student profile
+            only
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 04</div>
+        <div class="section-header">
+          <div class="section-num">4</div>
+          <h2>Accuracy of Information</h2>
+        </div>
+        <p>
+          You are solely responsible for the accuracy of all student medical and
+          emergency contact information entered into the system. Incorrect
+          information — such as a wrong blood group, outdated allergy list, or
+          an old phone number —
+          <strong>may delay or misdirect emergency response</strong> and could
+          have serious consequences.
+        </p>
+        <p>
+          Please review and update your student's profile whenever their medical
+          information changes. RESQID accepts no liability for harm arising from
+          inaccurate information provided by the user.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 05</div>
+        <div class="section-header">
+          <div class="section-num">5</div>
+          <h2>Prohibited Uses</h2>
+        </div>
+        <p>By using RESQID, you agree not to engage in any of the following:</p>
+        <div class="prohibited-grid">
+          <div class="prohibited-item">
+            <span class="x">✕</span> Use RESQID for any unlawful, fraudulent, or
+            harmful purpose
+          </div>
+          <div class="prohibited-item">
+            <span class="x">✕</span> Attempt to access another student's profile
+            without authorisation
+          </div>
+          <div class="prohibited-item">
+            <span class="x">✕</span> Reverse-engineer, scrape, or tamper with
+            the platform or its APIs
+          </div>
+          <div class="prohibited-item">
+            <span class="x">✕</span> Upload false, misleading, or offensive
+            content to any student profile
+          </div>
+          <div class="prohibited-item">
+            <span class="x">✕</span> Use the platform in any way that could harm
+            or endanger minors
+          </div>
+          <div class="prohibited-item">
+            <span class="x">✕</span> Impersonate a parent, guardian, teacher, or
+            school official
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 06</div>
+        <div class="section-header">
+          <div class="section-num">6</div>
+          <h2>Limitation of Liability</h2>
+        </div>
+        <p>
+          RESQID is an emergency information and alerting tool — it is designed
+          to assist, not to replace professional emergency services, medical
+          professionals, or established school safety protocols.
+        </p>
+        <ul>
+          <li>Any emergency outcome that occurs despite using RESQID</li>
+          <li>
+            Delays caused by incorrect information entered by users or
+            network/server unavailability
+          </li>
+          <li>
+            Temporary service unavailability due to maintenance or
+            infrastructure issues
+          </li>
+          <li>
+            Actions taken by third parties who scan a student's QR code in good
+            faith or otherwise
+          </li>
+        </ul>
+        <div class="warning-box">
+          <strong
+            >⚠️ In any medical emergency, always call 112 (India Emergency
+            Services) first.</strong
+          >
+          RESQID is a supplementary safety tool and should never be used as a
+          substitute for professional emergency response services.
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 07</div>
+        <div class="section-header">
+          <div class="section-num">7</div>
+          <h2>Service Availability</h2>
+        </div>
+        <p>
+          We maintain a <strong>99.9% uptime SLA</strong> and strive for
+          continuous availability. However, we cannot guarantee 100%
+          uninterrupted access at all times. Scheduled maintenance windows,
+          infrastructure updates, or unforeseen technical issues may
+          occasionally affect access. We will attempt to notify registered users
+          in advance of any planned downtime.
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 08</div>
+        <div class="section-header">
+          <div class="section-num">8</div>
+          <h2>Intellectual Property</h2>
+        </div>
+        <p>
+          All content, branding, source code, QR token systems, design assets,
+          and documentation of the RESQID platform are owned by RESQID and
+          protected under applicable Indian intellectual property laws. You may
+          not copy, reproduce, modify, or distribute any part of the platform
+          without explicit written permission from RESQID.
+        </p>
+      </div>
+
+      <!-- 9 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 09</div>
+        <div class="section-header">
+          <div class="section-num">9</div>
+          <h2>Account Termination</h2>
+        </div>
+        <p>
+          We reserve the right to suspend or permanently terminate accounts that
+          violate these Terms, misuse student data, engage in fraudulent
+          behaviour, or pose a risk to the safety of any student or user. You
+          may delete your own account at any time from your account settings,
+          subject to our data retention policy outlined in the Privacy Policy.
+        </p>
+      </div>
+
+      <!-- 10 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 10</div>
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Governing Law &amp; Disputes</h2>
+        </div>
+        <p>
+          These Terms of Service are governed by and construed in accordance
+          with the laws of India. Any disputes arising from the use of RESQID
+          shall be subject to the exclusive jurisdiction of the competent courts
+          located in India. We encourage users to contact us first to resolve
+          any issues amicably before pursuing legal action.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div class="section rv">
+        <div class="sec-lbl">Section 11</div>
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Changes to These Terms</h2>
+        </div>
+        <p>
+          We may update these Terms from time to time as the platform evolves or
+          as required by law. We will notify registered users of material
+          changes via email or in-app notification before the changes take
+          effect. Continued use of RESQID after changes are posted constitutes
+          your acceptance of the revised Terms.
+        </p>
+      </div>
+
+      <div class="contact-box rv">
+        <h3>Questions about these Terms?</h3>
+        <p>
+          Our legal team responds to all queries within 24 hours on business
+          days.
+        </p>
+        <div class="contact-links">
+          <a class="contact-link primary" href="mailto:legal@getresqid.in"
+            ><i class="bi bi-envelope"></i> legal@getresqid.in</a
+          >
+          <a class="contact-link" href="/privacy-policy.html"
+            ><i class="bi bi-shield-check"></i> Privacy Policy</a
+          >
+          <a class="contact-link" href="/data-security.html"
+            ><i class="bi bi-shield-lock"></i> Data &amp; Security</a
+          >
+          <a class="contact-link" href="/"
+            ><i class="bi bi-house"></i> Back to Home</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <p>
+        © 2026 RESQID. All rights reserved. Made with ❤️ in India. &nbsp;·&nbsp;
+        <span class="pill pill-g" style="font-size: 9px"
+          ><span class="dot-live"></span> All systems operational</span
+        >
+      </p>
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/data-security.html">Data Processing &amp; Security</a>
+        <a href="mailto:support@getresqid.in">support@getresqid.in</a>
+      </div>
+    </footer>
+
+    <script>
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("vis");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".rv").forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

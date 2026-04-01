@@ -332,7 +332,7 @@ body::before {
   pointer-events: none;
 }
 .btn-r:hover {
-  color: #fff;
+  color: #fff !important;
   transform: translateY(-3px) scale(1.02);
   box-shadow:
     0 12px 40px rgba(232, 52, 42, 0.55),
