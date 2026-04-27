@@ -353,6 +353,12 @@
         font-size: 2rem;
         flex-shrink: 0;
         margin-top: 2px;
+        color: var(--red);
+        line-height: 1;
+      }
+      .promise-icon i {
+        font-size: 2rem;
+        color: var(--red);
       }
       .promise strong {
         display: block;
@@ -524,6 +530,12 @@
       .right-card .icon {
         font-size: 1.4rem;
         margin-bottom: 8px;
+        color: var(--red);
+        line-height: 1;
+      }
+      .right-card .icon i {
+        font-size: 1.4rem;
+        color: var(--red);
       }
       .right-card p {
         font-size: 0.8rem;
@@ -750,7 +762,8 @@
               width="20"
               onerror="
                 this.style.display = 'none';
-                this.parentNode.innerHTML = '🛡️';
+                this.parentNode.innerHTML =
+                  '<i class=&quot;bi bi-shield-fill-check&quot; style=&quot;color:var(--red);font-size:18px&quot;></i>';
               "
             />
           </div>
@@ -784,7 +797,7 @@
     <div class="page-wrap">
       <!-- PROMISE -->
       <div class="promise rv">
-        <div class="promise-icon">🤝</div>
+        <div class="promise-icon"><i class="bi bi-shield-heart-fill"></i></div>
         <div>
           <strong>Our core commitment to you</strong>
           <p>
@@ -1026,23 +1039,23 @@
         </p>
         <div class="rights-grid">
           <div class="right-card">
-            <div class="icon">👁️</div>
+            <div class="icon"><i class="bi bi-eye-fill"></i></div>
             <p>Access data we hold about you or your child</p>
           </div>
           <div class="right-card">
-            <div class="icon">✏️</div>
+            <div class="icon"><i class="bi bi-pencil-fill"></i></div>
             <p>Request correction of inaccurate information</p>
           </div>
           <div class="right-card">
-            <div class="icon">🗑️</div>
+            <div class="icon"><i class="bi bi-trash3-fill"></i></div>
             <p>Delete your account and all associated data</p>
           </div>
           <div class="right-card">
-            <div class="icon">⏸️</div>
+            <div class="icon"><i class="bi bi-pause-circle-fill"></i></div>
             <p>Withdraw consent at any time (deactivates QR card)</p>
           </div>
           <div class="right-card">
-            <div class="icon">📦</div>
+            <div class="icon"><i class="bi bi-box-seam-fill"></i></div>
             <p>Receive a portable copy of your data</p>
           </div>
         </div>
@@ -1113,7 +1126,12 @@
     <!-- FOOTER -->
     <footer class="page-footer">
       <p>
-        © 2026 RESQID. All rights reserved. Made with ❤️ in India. &nbsp;·&nbsp;
+        © 2026 RESQID. All rights reserved. Made with
+        <i
+          class="bi bi-heart-fill"
+          style="color: var(--red); font-size: 10px"
+        ></i>
+        in India. &nbsp;·&nbsp;
         <span class="pill pill-g" style="font-size: 9px"
           ><span class="dot-live"></span> All systems operational</span
         >

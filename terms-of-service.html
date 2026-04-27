@@ -444,12 +444,11 @@
       .prohibited-item:hover {
         border-color: rgba(232, 52, 42, 0.22);
       }
-      .prohibited-item .x {
+      .prohibited-item .x-icon {
         color: var(--red);
         font-size: 1rem;
         flex-shrink: 0;
         margin-top: 1px;
-        font-weight: 900;
       }
 
       /* WARNING */
@@ -677,7 +676,8 @@
               width="20"
               onerror="
                 this.style.display = 'none';
-                this.parentNode.innerHTML = '🛡️';
+                this.parentNode.innerHTML =
+                  '<i class=&quot;bi bi-shield-fill-check&quot; style=&quot;color:var(--red);font-size:18px&quot;></i>';
               "
             />
           </div>
@@ -839,28 +839,28 @@
         <p>By using RESQID, you agree not to engage in any of the following:</p>
         <div class="prohibited-grid">
           <div class="prohibited-item">
-            <span class="x">✕</span> Use RESQID for any unlawful, fraudulent, or
-            harmful purpose
+            <i class="bi bi-x-circle-fill x-icon"></i> Use RESQID for any
+            unlawful, fraudulent, or harmful purpose
           </div>
           <div class="prohibited-item">
-            <span class="x">✕</span> Attempt to access another student's profile
-            without authorisation
+            <i class="bi bi-x-circle-fill x-icon"></i> Attempt to access another
+            student's profile without authorisation
           </div>
           <div class="prohibited-item">
-            <span class="x">✕</span> Reverse-engineer, scrape, or tamper with
-            the platform or its APIs
+            <i class="bi bi-x-circle-fill x-icon"></i> Reverse-engineer, scrape,
+            or tamper with the platform or its APIs
           </div>
           <div class="prohibited-item">
-            <span class="x">✕</span> Upload false, misleading, or offensive
-            content to any student profile
+            <i class="bi bi-x-circle-fill x-icon"></i> Upload false, misleading,
+            or offensive content to any student profile
           </div>
           <div class="prohibited-item">
-            <span class="x">✕</span> Use the platform in any way that could harm
-            or endanger minors
+            <i class="bi bi-x-circle-fill x-icon"></i> Use the platform in any
+            way that could harm or endanger minors
           </div>
           <div class="prohibited-item">
-            <span class="x">✕</span> Impersonate a parent, guardian, teacher, or
-            school official
+            <i class="bi bi-x-circle-fill x-icon"></i> Impersonate a parent,
+            guardian, teacher, or school official
           </div>
         </div>
       </div>
@@ -894,8 +894,12 @@
         </ul>
         <div class="warning-box">
           <strong
-            >⚠️ In any medical emergency, always call 112 (India Emergency
-            Services) first.</strong
+            ><i
+              class="bi bi-exclamation-triangle-fill"
+              style="color: #f59e0b; margin-right: 6px"
+            ></i>
+            In any medical emergency, always call 112 (India Emergency Services)
+            first.</strong
           >
           RESQID is a supplementary safety tool and should never be used as a
           substitute for professional emergency response services.
@@ -1008,7 +1012,12 @@
 
     <footer class="page-footer">
       <p>
-        © 2026 RESQID. All rights reserved. Made with ❤️ in India. &nbsp;·&nbsp;
+        © 2026 RESQID. All rights reserved. Made with
+        <i
+          class="bi bi-heart-fill"
+          style="color: var(--red); font-size: 10px"
+        ></i>
+        in India. &nbsp;·&nbsp;
         <span class="pill pill-g" style="font-size: 9px"
           ><span class="dot-live"></span> All systems operational</span
         >

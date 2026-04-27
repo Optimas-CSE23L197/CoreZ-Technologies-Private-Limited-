@@ -343,6 +343,12 @@
       .sec-badge .b-icon {
         font-size: 1.7rem;
         margin-bottom: 9px;
+        color: var(--red);
+        line-height: 1;
+      }
+      .sec-badge .b-icon i {
+        font-size: 1.7rem;
+        color: var(--red);
       }
       .sec-badge strong {
         display: block;
@@ -777,7 +783,8 @@
               width="20"
               onerror="
                 this.style.display = 'none';
-                this.parentNode.innerHTML = '🛡️';
+                this.parentNode.innerHTML =
+                  '<i class=&quot;bi bi-shield-fill-check&quot; style=&quot;color:var(--red);font-size:18px&quot;></i>';
               "
             />
           </div>
@@ -813,26 +820,26 @@
       <!-- BADGES -->
       <div class="security-badges">
         <div class="sec-badge rv d1">
-          <div class="b-icon">🔒</div>
+          <div class="b-icon"><i class="bi bi-lock-fill"></i></div>
           <strong>SSL/TLS</strong><span>All data encrypted in transit</span>
         </div>
         <div class="sec-badge rv d2">
-          <div class="b-icon">🛡️</div>
+          <div class="b-icon"><i class="bi bi-shield-fill-check"></i></div>
           <strong>Encrypted Storage</strong
           ><span>Sensitive data encrypted at rest</span>
         </div>
         <div class="sec-badge rv d3">
-          <div class="b-icon">🔑</div>
+          <div class="b-icon"><i class="bi bi-key-fill"></i></div>
           <strong>Hashed Passwords</strong
           ><span>Never stored in plain text</span>
         </div>
         <div class="sec-badge rv d4">
-          <div class="b-icon">📍</div>
+          <div class="b-icon"><i class="bi bi-funnel-fill"></i></div>
           <strong>Minimal Exposure</strong
           ><span>Only necessary data is shown</span>
         </div>
         <div class="sec-badge rv d5">
-          <div class="b-icon">🔔</div>
+          <div class="b-icon"><i class="bi bi-bell-fill"></i></div>
           <strong>72h Breach Alert</strong
           ><span>Fast incident notification</span>
         </div>
@@ -1223,7 +1230,12 @@
 
     <footer class="page-footer">
       <p>
-        © 2026 RESQID. All rights reserved. Made with ❤️ in India. &nbsp;·&nbsp;
+        © 2026 RESQID. All rights reserved. Made with
+        <i
+          class="bi bi-heart-fill"
+          style="color: var(--red); font-size: 10px"
+        ></i>
+        in India. &nbsp;·&nbsp;
         <span class="pill pill-g" style="font-size: 9px"
           ><span class="dot-live"></span> All systems operational</span
         >

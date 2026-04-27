@@ -52,6 +52,34 @@
     <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
     <!-- add external css -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* ── Icon replacements ── */
+      .testi-stars i {
+        color: #f59e0b;
+        font-size: 12px;
+        margin-right: 1px;
+      }
+      .p-ico i {
+        font-size: 15px;
+      }
+      .scan-icon i {
+        font-size: 1.1em;
+      }
+      .tl-circle i {
+        font-size: 1em;
+      }
+      .cf-icon i {
+        font-size: 1.3em;
+      }
+      .pc-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .fc-icon i {
+        font-size: 1.4em;
+      }
+    </style>
   </head>
   <body>
     <div class="c-dot" id="cDot"></div>
@@ -162,7 +190,9 @@
                   </div>
                 </div>
                 <div class="p-row">
-                  <div class="p-ico">🩸</div>
+                  <div class="p-ico">
+                    <i class="bi bi-droplet-fill" style="color: #e8342a"></i>
+                  </div>
                   <div>
                     <div class="p-rl">Blood Group</div>
                     <div
@@ -174,14 +204,24 @@
                   </div>
                 </div>
                 <div class="p-row">
-                  <div class="p-ico">⚠️</div>
+                  <div class="p-ico">
+                    <i
+                      class="bi bi-exclamation-triangle-fill"
+                      style="color: #f59e0b"
+                    ></i>
+                  </div>
                   <div>
                     <div class="p-rl">Allergy</div>
                     <div class="p-rv">Peanuts, Penicillin</div>
                   </div>
                 </div>
                 <div class="p-row">
-                  <div class="p-ico">📞</div>
+                  <div class="p-ico">
+                    <i
+                      class="bi bi-telephone-fill"
+                      style="color: var(--ok)"
+                    ></i>
+                  </div>
                   <div>
                     <div class="p-rl">Emergency Contact</div>
                     <div class="p-rv">Priya Sharma (Mother)</div>
@@ -190,7 +230,9 @@
               </div>
             </div>
             <div class="p-badge pb1">
-              <div style="font-size: 18px">🔔</div>
+              <div style="font-size: 18px; color: #3b82f6">
+                <i class="bi bi-bell-fill"></i>
+              </div>
               <div>
                 <div class="pb-n" style="font-size: 11px; color: var(--ok)">
                   Scan Alert
@@ -199,7 +241,9 @@
               </div>
             </div>
             <div class="p-badge pb2">
-              <div style="font-size: 18px">🛡️</div>
+              <div style="font-size: 18px; color: var(--red)">
+                <i class="bi bi-shield-fill-check"></i>
+              </div>
               <div>
                 <div class="pb-n" style="font-size: 11px">Profile</div>
                 <div class="pb-t">100% complete</div>
@@ -421,27 +465,41 @@
             <div class="p-4">
               <div class="scan-flow row g-0 align-items-center text-center">
                 <div class="col scan-step">
-                  <div class="scan-icon">📱</div>
+                  <div class="scan-icon">
+                    <i class="bi bi-qr-code-scan"></i>
+                  </div>
                   <div class="scan-lbl">Scan QR</div>
                 </div>
-                <div class="col-auto scan-arr">→</div>
+                <div class="col-auto scan-arr">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
                 <div class="col scan-step">
-                  <div class="scan-icon">🌐</div>
+                  <div class="scan-icon"><i class="bi bi-globe2"></i></div>
                   <div class="scan-lbl">Opens Profile</div>
                 </div>
-                <div class="col-auto scan-arr">→</div>
+                <div class="col-auto scan-arr">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
                 <div class="col scan-step">
-                  <div class="scan-icon">🩸</div>
+                  <div class="scan-icon">
+                    <i class="bi bi-droplet-fill" style="color: #e8342a"></i>
+                  </div>
                   <div class="scan-lbl">Blood Group</div>
                 </div>
-                <div class="col-auto scan-arr">→</div>
+                <div class="col-auto scan-arr">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
                 <div class="col scan-step">
-                  <div class="scan-icon">📞</div>
+                  <div class="scan-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
                   <div class="scan-lbl">Call Parent</div>
                 </div>
-                <div class="col-auto scan-arr">→</div>
+                <div class="col-auto scan-arr">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
                 <div class="col scan-step">
-                  <div class="scan-icon">🔔</div>
+                  <div class="scan-icon"><i class="bi bi-bell-fill"></i></div>
                   <div class="scan-lbl ok">Parent Alerted</div>
                 </div>
               </div>
@@ -470,7 +528,11 @@
                 class="trust-c flex-fill"
                 style="text-align: left; padding: 14px 18px"
               >
-                <div style="font-size: 20px; margin-bottom: 3px">🏥</div>
+                <div
+                  style="font-size: 20px; margin-bottom: 3px; color: var(--ok)"
+                >
+                  <i class="bi bi-hospital-fill"></i>
+                </div>
                 <div
                   style="
                     font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
@@ -490,7 +552,11 @@
                 class="trust-c flex-fill"
                 style="text-align: left; padding: 14px 18px"
               >
-                <div style="font-size: 20px; margin-bottom: 3px">🔐</div>
+                <div
+                  style="font-size: 20px; margin-bottom: 3px; color: #3b82f6"
+                >
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
                 <div
                   style="
                     font-family: &quot;Cabinet Grotesk&quot;, sans-serif;
@@ -511,7 +577,7 @@
           <div class="col-lg-7 rv-r">
             <div class="tl-item">
               <div class="tl-left">
-                <div class="tl-circle">📲</div>
+                <div class="tl-circle"><i class="bi bi-qr-code-scan"></i></div>
                 <div class="tl-line"></div>
               </div>
               <div class="tl-content">
@@ -525,7 +591,9 @@
             </div>
             <div class="tl-item">
               <div class="tl-left">
-                <div class="tl-circle">📋</div>
+                <div class="tl-circle">
+                  <i class="bi bi-file-medical-fill"></i>
+                </div>
                 <div class="tl-line"></div>
               </div>
               <div class="tl-content">
@@ -539,7 +607,7 @@
             </div>
             <div class="tl-item">
               <div class="tl-left">
-                <div class="tl-circle">🔔</div>
+                <div class="tl-circle"><i class="bi bi-bell-fill"></i></div>
                 <div class="tl-line"></div>
               </div>
               <div class="tl-content">
@@ -557,7 +625,7 @@
                   class="tl-circle"
                   style="border-color: var(--ok); background: var(--ok-lt)"
                 >
-                  ✅
+                  <i class="bi bi-check-lg" style="color: var(--ok)"></i>
                 </div>
               </div>
               <div class="tl-content">
@@ -598,7 +666,9 @@
             </p>
             <div class="cf-list">
               <div class="cf-item">
-                <div class="cf-icon">🪪</div>
+                <div class="cf-icon">
+                  <i class="bi bi-credit-card-2-front-fill"></i>
+                </div>
                 <div>
                   <div class="cf-t">PVC Laminated, CR80 Size</div>
                   <div class="cf-d">
@@ -607,7 +677,7 @@
                 </div>
               </div>
               <div class="cf-item">
-                <div class="cf-icon">🔒</div>
+                <div class="cf-icon"><i class="bi bi-lock-fill"></i></div>
                 <div>
                   <div class="cf-t">Unique Encrypted QR Token</div>
                   <div class="cf-d">
@@ -616,7 +686,7 @@
                 </div>
               </div>
               <div class="cf-item">
-                <div class="cf-icon">🎨</div>
+                <div class="cf-icon"><i class="bi bi-palette-fill"></i></div>
                 <div>
                   <div class="cf-t">School-branded Design</div>
                   <div class="cf-d">
@@ -625,7 +695,7 @@
                 </div>
               </div>
               <div class="cf-item">
-                <div class="cf-icon g">♻️</div>
+                <div class="cf-icon g"><i class="bi bi-arrow-repeat"></i></div>
                 <div>
                   <div class="cf-t">Replaceable Without Profile Loss</div>
                   <div class="cf-d">
@@ -653,7 +723,37 @@
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 mb-2">
-                  <div class="pc-avatar">👦</div>
+                  <div class="pc-avatar">
+                    <svg
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r="18"
+                        fill="rgba(232,52,42,0.12)"
+                      />
+                      <circle
+                        cx="18"
+                        cy="14"
+                        r="6"
+                        fill="#e8342a"
+                        opacity="0.7"
+                      />
+                      <ellipse
+                        cx="18"
+                        cy="30"
+                        rx="10"
+                        ry="7"
+                        fill="#e8342a"
+                        opacity="0.5"
+                      />
+                    </svg>
+                  </div>
                   <div>
                     <div class="pc-name">Aryan Sharma</div>
                     <div class="pc-class">Class 8-A · XYZ Public School</div>
@@ -754,7 +854,7 @@
                     border: 1px solid var(--red-bd);
                   "
                 >
-                  📱
+                  <i class="bi bi-qr-code-scan"></i>
                 </div>
                 <h4
                   style="
@@ -823,7 +923,7 @@
                 border: 1px solid rgba(16, 185, 129, 0.2);
               "
             >
-              🏫
+              <i class="bi bi-building-fill"></i>
             </div>
             <h5>School Dashboard</h5>
             <p>
@@ -845,7 +945,7 @@
                 border: 1px solid rgba(59, 130, 246, 0.18);
               "
             >
-              🔔
+              <i class="bi bi-bell-fill"></i>
             </div>
             <h5>Real-time Scan Alerts</h5>
             <p>
@@ -861,7 +961,7 @@
                 border: 1px solid rgba(245, 158, 11, 0.18);
               "
             >
-              ⚠️
+              <i class="bi bi-exclamation-diamond-fill"></i>
             </div>
             <h5>Anomaly Detection</h5>
             <p>
@@ -874,7 +974,7 @@
               class="fc-icon"
               style="background: var(--red-lt); border: 1px solid var(--red-bd)"
             >
-              🔒
+              <i class="bi bi-lock-fill"></i>
             </div>
             <h5>Privacy Controls</h5>
             <p>
@@ -891,7 +991,7 @@
                   border: 1px solid rgba(16, 185, 129, 0.2);
                 "
               >
-                📋
+                <i class="bi bi-clipboard2-pulse-fill"></i>
               </div>
               <div>
                 <h5>Complete Scan History</h5>
@@ -912,7 +1012,7 @@
                   border: 1px solid rgba(59, 130, 246, 0.18);
                 "
               >
-                🔄
+                <i class="bi bi-arrow-repeat"></i>
               </div>
               <div>
                 <h5>Card Replacement Flow</h5>
@@ -977,7 +1077,11 @@
         </div>
         <div class="owl-carousel owl-theme" id="testiCarousel">
           <div class="testi-c">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
             <p class="testi-q">
               My son had an allergic reaction at school. The nurse scanned his
               card within seconds and knew exactly what to avoid. I got a call
@@ -992,7 +1096,11 @@
             </div>
           </div>
           <div class="testi-c">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
             <p class="testi-q">
               We onboarded 400 students in a single afternoon using the school
               dashboard. The batch card printing and token management saved us
@@ -1007,7 +1115,11 @@
             </div>
           </div>
           <div class="testi-c">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
             <p class="testi-q">
               The privacy controls are fantastic. I can show blood group and
               emergency contact but keep medical conditions hidden exactly what
@@ -1022,7 +1134,11 @@
             </div>
           </div>
           <div class="testi-c">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
             <p class="testi-q">
               Our school medical team relied entirely on paper cards before. Now
               everything is digital, up-to-date, and we get anomaly alerts if
@@ -1037,7 +1153,11 @@
             </div>
           </div>
           <div class="testi-c">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ><i class="bi bi-star-fill"></i>
+            </div>
             <p class="testi-q">
               Setup took literally 4 minutes. Scanned the QR on my kid's card,
               entered my number, filled in her profile, hit activate. That was
@@ -1298,7 +1418,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Physical QR Card
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Physical QR Card
                 </li>
                 <li
                   style="
@@ -1308,7 +1432,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Emergency Profile
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Emergency Profile
                 </li>
                 <li
                   style="
@@ -1318,7 +1446,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Parent Mobile App
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Parent Mobile App
                 </li>
                 <li
                   style="
@@ -1328,7 +1460,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Scan Alerts (Push)
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Scan Alerts (Push)
                 </li>
                 <li
                   style="
@@ -1338,7 +1474,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> 1-year Card Validity
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  1-year Card Validity
                 </li>
                 <li
                   style="
@@ -1348,7 +1488,8 @@
                     color: var(--tx3);
                   "
                 >
-                  <span>✗</span> School Dashboard
+                  <i class="bi bi-dash-circle" style="color: var(--tx4)"></i>
+                  School Dashboard
                 </li>
               </ul>
               <a href="#contact" class="btn-o d-block text-center mt-4"
@@ -1413,7 +1554,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Everything in Basic
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Everything in Basic
                 </li>
                 <li
                   style="
@@ -1423,7 +1568,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> School Admin Dashboard
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  School Admin Dashboard
                 </li>
                 <li
                   style="
@@ -1433,7 +1582,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Batch Card Printing
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Batch Card Printing
                 </li>
                 <li
                   style="
@@ -1443,7 +1596,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Scan Anomaly Detection
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Scan Anomaly Detection
                 </li>
                 <li
                   style="
@@ -1453,7 +1610,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> SMS + Email Alerts
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  SMS + Email Alerts
                 </li>
                 <li
                   style="
@@ -1463,7 +1624,11 @@
                     color: var(--tx2);
                   "
                 >
-                  <span style="color: var(--ok)">✓</span> Custom Card Branding
+                  <i
+                    class="bi bi-check-circle-fill"
+                    style="color: var(--ok)"
+                  ></i>
+                  Custom Card Branding
                 </li>
               </ul>
               <a href="#contact" class="btn-r d-block text-center mt-4"
@@ -1709,7 +1874,8 @@
           class="text-center mt-4 rv"
           style="font-size: 12.5px; color: var(--tx3)"
         >
-          💡 Schools purchasing 100+ cards get volume pricing.
+          <i class="bi bi-lightbulb-fill" style="color: #f59e0b"></i> Schools
+          purchasing 100+ cards get volume pricing.
           <a href="#contact" style="color: var(--red)">Talk to us →</a>
         </p>
       </div>
@@ -2069,7 +2235,12 @@
         </div>
         <div class="f-bot">
           <p class="f-copy">
-            © 2026 RESQID. All rights reserved. Made with ❤️ in India.
+            © 2026 RESQID. All rights reserved. Made with
+            <i
+              class="bi bi-heart-fill"
+              style="color: var(--red); font-size: 10px"
+            ></i>
+            in India.
           </p>
           <div class="d-flex gap-3 align-items-center mt-3 mt-md-0">
             <span class="pill pill-g" style="font-size: 9px"
